@@ -3,11 +3,13 @@
 //  SHSoftwareRasterizer
 //
 //  Created by 7heaven on 16/5/12.
-//  Copyright © 2016年 7heaven. All rights reserved.
+//  Copyright Aiks Group . All rights reserved.
 //
 
 #ifndef BasicGeometry_h
 #define BasicGeometry_h
+
+namespace aiks {
 
 typedef struct{
     int x;
@@ -91,5 +93,6 @@ static inline SHColor SHColorMake(unsigned int color){
                      static_cast<unsigned char>(color & 0xFF)};
 }
 
+}
 
 #endif /* BasicGeometry_h */
