@@ -6,6 +6,7 @@
 #define AIKS_AIKS_H
 
 // define supported target platform macro which Aiks uses.
+
 #define AK_PLATFORM_UNKNOWN            0
 #define AK_PLATFORM_IOS                1
 #define AK_PLATFORM_ANDROID            2
@@ -64,6 +65,36 @@
 #if defined(LINUX) && !defined(__APPLE__)
 #undef  AK_TARGET_PLATFORM
 #define AK_TARGET_PLATFORM         AK_PLATFORM_LINUX
+#endif
+
+// marmalade
+#if defined(MARMALADE)
+#undef  AK_TARGET_PLATFORM
+#define AK_TARGET_PLATFORM         AK_PLATFORM_MARMALADE
+#endif
+
+// bada
+#if defined(SHP)
+#undef  AK_TARGET_PLATFORM
+#define AK_TARGET_PLATFORM         AK_PLATFORM_BADA
+#endif
+
+// qnx
+#if defined(__QNX__)
+#undef  AK_TARGET_PLATFORM
+#define AK_TARGET_PLATFORM     AK_PLATFORM_BLACKBERRY
+#endif
+
+// native client
+#if defined(__native_client__)
+#undef  AK_TARGET_PLATFORM
+#define AK_TARGET_PLATFORM     AK_PLATFORM_NACL
+#endif
+
+// Emscripten
+#if defined(EMSCRIPTEN)
+#undef  AK_TARGET_PLATFORM
+#define AK_TARGET_PLATFORM     AK_PLATFORM_EMSCRIPTEN
 #endif
 
 // tizen

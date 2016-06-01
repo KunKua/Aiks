@@ -10,11 +10,11 @@
 #define BasicDraw_h
 
 #include <stdio.h>
-#include "BasicGeometry.h"
-#include "IDevice.h"
-#include "Vertex3D.hpp"
-#include "Texture.hpp"
-#include "ILight.h"
+#include "math/BasicGeometry.h"
+#include "device/IDevice.h"
+#include "draw/Vertex3D.h"
+#include "draw/Texture.h"
+#include "light/ILight.h"
 
 namespace sh{
 

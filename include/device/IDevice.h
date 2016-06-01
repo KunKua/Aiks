@@ -9,7 +9,7 @@
 #ifndef IDevice_h
 #define IDevice_h
 
-#include "BasicGeometry.h"
+#include "math/BasicGeometry.h"
 
 namespace sh{
     class IDevice{

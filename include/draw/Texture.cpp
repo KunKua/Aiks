@@ -6,7 +6,7 @@
 //  Copyright © 2016年 7heaven. All rights reserved.
 //
 
-#include "Texture.hpp"
+#include "draw/Texture.h"
 
 namespace sh{
     Texture::Texture(SHColor *pixels, unsigned int width, unsigned int height){

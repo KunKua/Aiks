@@ -1,0 +1,432 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA3FE0B81CFEAF87003E0D14 /* Aiks.h in Headers */ = {isa = PBXBuildFile; fileRef = AA3FE0921CFEAF87003E0D14 /* Aiks.h */; };
+		AA3FE0B91CFEAF87003E0D14 /* AkRefCount.h in Headers */ = {isa = PBXBuildFile; fileRef = AA3FE0941CFEAF87003E0D14 /* AkRefCount.h */; };
+		AA3FE0BA1CFEAF87003E0D14 /* AkTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = AA3FE0951CFEAF87003E0D14 /* AkTypes.h */; };
+		AA3FE0BB1CFEAF87003E0D14 /* IDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = AA3FE0971CFEAF87003E0D14 /* IDecoder.h */; };
+		AA3FE0BC1CFEAF87003E0D14 /* IDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = AA3FE0991CFEAF87003E0D14 /* IDevice.h */; };
+		AA3FE0BD1CFEAF87003E0D14 /* IDevice_osx.h in Headers */ = {isa = PBXBuildFile; fileRef = AA3FE09B1CFEAF87003E0D14 /* IDevice_osx.h */; };
+		AA3FE0BE1CFEAF87003E0D14 /* MacDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA3FE09C1CFEAF87003E0D14 /* MacDevice.cpp */; };
+		AA3FE0BF1CFEAF87003E0D14 /* MacDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = AA3FE09D1CFEAF87003E0D14 /* MacDevice.h */; };
+		AA3FE0C01CFEAF87003E0D14 /* SHHardwareCanvas.h in Headers */ = {isa = PBXBuildFile; fileRef = AA3FE09E1CFEAF87003E0D14 /* SHHardwareCanvas.h */; };
+		AA3FE0C11CFEAF87003E0D14 /* SHHardwareCanvas.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA3FE09F1CFEAF87003E0D14 /* SHHardwareCanvas.mm */; };
+		AA3FE0C21CFEAF87003E0D14 /* SHSoftwareCanvas.h in Headers */ = {isa = PBXBuildFile; fileRef = AA3FE0A01CFEAF87003E0D14 /* SHSoftwareCanvas.h */; };
+		AA3FE0C31CFEAF87003E0D14 /* SHSoftwareCanvas.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA3FE0A11CFEAF87003E0D14 /* SHSoftwareCanvas.mm */; };
+		AA3FE0C41CFEAF87003E0D14 /* BasicDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA3FE0A31CFEAF87003E0D14 /* BasicDraw.cpp */; };
+		AA3FE0C51CFEAF87003E0D14 /* BasicDraw.h in Headers */ = {isa = PBXBuildFile; fileRef = AA3FE0A41CFEAF87003E0D14 /* BasicDraw.h */; };
+		AA3FE0C61CFEAF87003E0D14 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA3FE0A51CFEAF87003E0D14 /* Texture.cpp */; };
+		AA3FE0C71CFEAF87003E0D14 /* Texture.h in Headers */ = {isa = PBXBuildFile; fileRef = AA3FE0A61CFEAF87003E0D14 /* Texture.h */; };
+		AA3FE0C81CFEAF87003E0D14 /* Vertex3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA3FE0A71CFEAF87003E0D14 /* Vertex3D.cpp */; };
+		AA3FE0C91CFEAF87003E0D14 /* Vertex3D.h in Headers */ = {isa = PBXBuildFile; fileRef = AA3FE0A81CFEAF87003E0D14 /* Vertex3D.h */; };
+		AA3FE0CA1CFEAF87003E0D14 /* FakeLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA3FE0AA1CFEAF87003E0D14 /* FakeLight.cpp */; };
+		AA3FE0CB1CFEAF87003E0D14 /* FakeLight.h in Headers */ = {isa = PBXBuildFile; fileRef = AA3FE0AB1CFEAF87003E0D14 /* FakeLight.h */; };
+		AA3FE0CC1CFEAF87003E0D14 /* ILight.h in Headers */ = {isa = PBXBuildFile; fileRef = AA3FE0AC1CFEAF87003E0D14 /* ILight.h */; };
+		AA3FE0CD1CFEAF87003E0D14 /* SimpleDiffuseLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA3FE0AD1CFEAF87003E0D14 /* SimpleDiffuseLight.cpp */; };
+		AA3FE0CE1CFEAF87003E0D14 /* SimpleDiffuseLight.h in Headers */ = {isa = PBXBuildFile; fileRef = AA3FE0AE1CFEAF87003E0D14 /* SimpleDiffuseLight.h */; };
+		AA3FE0CF1CFEAF87003E0D14 /* IMaterial.h in Headers */ = {isa = PBXBuildFile; fileRef = AA3FE0B01CFEAF87003E0D14 /* IMaterial.h */; };
+		AA3FE0D01CFEAF87003E0D14 /* AkPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = AA3FE0B21CFEAF87003E0D14 /* AkPoint.h */; };
+		AA3FE0D11CFEAF87003E0D14 /* BasicGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = AA3FE0B31CFEAF87003E0D14 /* BasicGeometry.h */; };
+		AA3FE0D21CFEAF87003E0D14 /* Matrix44.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA3FE0B41CFEAF87003E0D14 /* Matrix44.cpp */; };
+		AA3FE0D31CFEAF87003E0D14 /* Matrix44.h in Headers */ = {isa = PBXBuildFile; fileRef = AA3FE0B51CFEAF87003E0D14 /* Matrix44.h */; };
+		AA3FE0D41CFEAF87003E0D14 /* Transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA3FE0B61CFEAF87003E0D14 /* Transform.cpp */; };
+		AA3FE0D51CFEAF87003E0D14 /* Transform.h in Headers */ = {isa = PBXBuildFile; fileRef = AA3FE0B71CFEAF87003E0D14 /* Transform.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AA0195D51CFE9B8C0016CB1D /* libAiks_lib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAiks_lib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA3FE0921CFEAF87003E0D14 /* Aiks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aiks.h; sourceTree = "<group>"; };
+		AA3FE0941CFEAF87003E0D14 /* AkRefCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AkRefCount.h; sourceTree = "<group>"; };
+		AA3FE0951CFEAF87003E0D14 /* AkTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AkTypes.h; sourceTree = "<group>"; };
+		AA3FE0971CFEAF87003E0D14 /* IDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDecoder.h; sourceTree = "<group>"; };
+		AA3FE0991CFEAF87003E0D14 /* IDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDevice.h; sourceTree = "<group>"; };
+		AA3FE09B1CFEAF87003E0D14 /* IDevice_osx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDevice_osx.h; sourceTree = "<group>"; };
+		AA3FE09C1CFEAF87003E0D14 /* MacDevice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MacDevice.cpp; sourceTree = "<group>"; };
+		AA3FE09D1CFEAF87003E0D14 /* MacDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacDevice.h; sourceTree = "<group>"; };
+		AA3FE09E1CFEAF87003E0D14 /* SHHardwareCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHHardwareCanvas.h; sourceTree = "<group>"; };
+		AA3FE09F1CFEAF87003E0D14 /* SHHardwareCanvas.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SHHardwareCanvas.mm; sourceTree = "<group>"; };
+		AA3FE0A01CFEAF87003E0D14 /* SHSoftwareCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSoftwareCanvas.h; sourceTree = "<group>"; };
+		AA3FE0A11CFEAF87003E0D14 /* SHSoftwareCanvas.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SHSoftwareCanvas.mm; sourceTree = "<group>"; };
+		AA3FE0A31CFEAF87003E0D14 /* BasicDraw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BasicDraw.cpp; sourceTree = "<group>"; };
+		AA3FE0A41CFEAF87003E0D14 /* BasicDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicDraw.h; sourceTree = "<group>"; };
+		AA3FE0A51CFEAF87003E0D14 /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
+		AA3FE0A61CFEAF87003E0D14 /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
+		AA3FE0A71CFEAF87003E0D14 /* Vertex3D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vertex3D.cpp; sourceTree = "<group>"; };
+		AA3FE0A81CFEAF87003E0D14 /* Vertex3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vertex3D.h; sourceTree = "<group>"; };
+		AA3FE0AA1CFEAF87003E0D14 /* FakeLight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FakeLight.cpp; sourceTree = "<group>"; };
+		AA3FE0AB1CFEAF87003E0D14 /* FakeLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeLight.h; sourceTree = "<group>"; };
+		AA3FE0AC1CFEAF87003E0D14 /* ILight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILight.h; sourceTree = "<group>"; };
+		AA3FE0AD1CFEAF87003E0D14 /* SimpleDiffuseLight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleDiffuseLight.cpp; sourceTree = "<group>"; };
+		AA3FE0AE1CFEAF87003E0D14 /* SimpleDiffuseLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleDiffuseLight.h; sourceTree = "<group>"; };
+		AA3FE0B01CFEAF87003E0D14 /* IMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMaterial.h; sourceTree = "<group>"; };
+		AA3FE0B21CFEAF87003E0D14 /* AkPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AkPoint.h; sourceTree = "<group>"; };
+		AA3FE0B31CFEAF87003E0D14 /* BasicGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicGeometry.h; sourceTree = "<group>"; };
+		AA3FE0B41CFEAF87003E0D14 /* Matrix44.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Matrix44.cpp; sourceTree = "<group>"; };
+		AA3FE0B51CFEAF87003E0D14 /* Matrix44.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix44.h; sourceTree = "<group>"; };
+		AA3FE0B61CFEAF87003E0D14 /* Transform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Transform.cpp; sourceTree = "<group>"; };
+		AA3FE0B71CFEAF87003E0D14 /* Transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transform.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA0195D21CFE9B8C0016CB1D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA0195CC1CFE9B8C0016CB1D = {
+			isa = PBXGroup;
+			children = (
+				AA3FE0911CFEAF87003E0D14 /* include */,
+				AA0195D61CFE9B8C0016CB1D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA0195D61CFE9B8C0016CB1D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA0195D51CFE9B8C0016CB1D /* libAiks_lib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA3FE0911CFEAF87003E0D14 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				AA3FE0921CFEAF87003E0D14 /* Aiks.h */,
+				AA3FE0931CFEAF87003E0D14 /* base */,
+				AA3FE0961CFEAF87003E0D14 /* decoders */,
+				AA3FE0981CFEAF87003E0D14 /* device */,
+				AA3FE0A21CFEAF87003E0D14 /* draw */,
+				AA3FE0A91CFEAF87003E0D14 /* light */,
+				AA3FE0AF1CFEAF87003E0D14 /* material */,
+				AA3FE0B11CFEAF87003E0D14 /* math */,
+			);
+			name = include;
+			path = ../include;
+			sourceTree = "<group>";
+		};
+		AA3FE0931CFEAF87003E0D14 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				AA3FE0941CFEAF87003E0D14 /* AkRefCount.h */,
+				AA3FE0951CFEAF87003E0D14 /* AkTypes.h */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		AA3FE0961CFEAF87003E0D14 /* decoders */ = {
+			isa = PBXGroup;
+			children = (
+				AA3FE0971CFEAF87003E0D14 /* IDecoder.h */,
+			);
+			path = decoders;
+			sourceTree = "<group>";
+		};
+		AA3FE0981CFEAF87003E0D14 /* device */ = {
+			isa = PBXGroup;
+			children = (
+				AA3FE0991CFEAF87003E0D14 /* IDevice.h */,
+				AA3FE09A1CFEAF87003E0D14 /* osx */,
+			);
+			path = device;
+			sourceTree = "<group>";
+		};
+		AA3FE09A1CFEAF87003E0D14 /* osx */ = {
+			isa = PBXGroup;
+			children = (
+				AA3FE09B1CFEAF87003E0D14 /* IDevice_osx.h */,
+				AA3FE09C1CFEAF87003E0D14 /* MacDevice.cpp */,
+				AA3FE09D1CFEAF87003E0D14 /* MacDevice.h */,
+				AA3FE09E1CFEAF87003E0D14 /* SHHardwareCanvas.h */,
+				AA3FE09F1CFEAF87003E0D14 /* SHHardwareCanvas.mm */,
+				AA3FE0A01CFEAF87003E0D14 /* SHSoftwareCanvas.h */,
+				AA3FE0A11CFEAF87003E0D14 /* SHSoftwareCanvas.mm */,
+			);
+			path = osx;
+			sourceTree = "<group>";
+		};
+		AA3FE0A21CFEAF87003E0D14 /* draw */ = {
+			isa = PBXGroup;
+			children = (
+				AA3FE0A31CFEAF87003E0D14 /* BasicDraw.cpp */,
+				AA3FE0A41CFEAF87003E0D14 /* BasicDraw.h */,
+				AA3FE0A51CFEAF87003E0D14 /* Texture.cpp */,
+				AA3FE0A61CFEAF87003E0D14 /* Texture.h */,
+				AA3FE0A71CFEAF87003E0D14 /* Vertex3D.cpp */,
+				AA3FE0A81CFEAF87003E0D14 /* Vertex3D.h */,
+			);
+			path = draw;
+			sourceTree = "<group>";
+		};
+		AA3FE0A91CFEAF87003E0D14 /* light */ = {
+			isa = PBXGroup;
+			children = (
+				AA3FE0AA1CFEAF87003E0D14 /* FakeLight.cpp */,
+				AA3FE0AB1CFEAF87003E0D14 /* FakeLight.h */,
+				AA3FE0AC1CFEAF87003E0D14 /* ILight.h */,
+				AA3FE0AD1CFEAF87003E0D14 /* SimpleDiffuseLight.cpp */,
+				AA3FE0AE1CFEAF87003E0D14 /* SimpleDiffuseLight.h */,
+			);
+			path = light;
+			sourceTree = "<group>";
+		};
+		AA3FE0AF1CFEAF87003E0D14 /* material */ = {
+			isa = PBXGroup;
+			children = (
+				AA3FE0B01CFEAF87003E0D14 /* IMaterial.h */,
+			);
+			path = material;
+			sourceTree = "<group>";
+		};
+		AA3FE0B11CFEAF87003E0D14 /* math */ = {
+			isa = PBXGroup;
+			children = (
+				AA3FE0B21CFEAF87003E0D14 /* AkPoint.h */,
+				AA3FE0B31CFEAF87003E0D14 /* BasicGeometry.h */,
+				AA3FE0B41CFEAF87003E0D14 /* Matrix44.cpp */,
+				AA3FE0B51CFEAF87003E0D14 /* Matrix44.h */,
+				AA3FE0B61CFEAF87003E0D14 /* Transform.cpp */,
+				AA3FE0B71CFEAF87003E0D14 /* Transform.h */,
+			);
+			path = math;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		AA0195D31CFE9B8C0016CB1D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA3FE0BA1CFEAF87003E0D14 /* AkTypes.h in Headers */,
+				AA3FE0CC1CFEAF87003E0D14 /* ILight.h in Headers */,
+				AA3FE0B91CFEAF87003E0D14 /* AkRefCount.h in Headers */,
+				AA3FE0B81CFEAF87003E0D14 /* Aiks.h in Headers */,
+				AA3FE0D31CFEAF87003E0D14 /* Matrix44.h in Headers */,
+				AA3FE0C21CFEAF87003E0D14 /* SHSoftwareCanvas.h in Headers */,
+				AA3FE0BC1CFEAF87003E0D14 /* IDevice.h in Headers */,
+				AA3FE0C91CFEAF87003E0D14 /* Vertex3D.h in Headers */,
+				AA3FE0BF1CFEAF87003E0D14 /* MacDevice.h in Headers */,
+				AA3FE0CB1CFEAF87003E0D14 /* FakeLight.h in Headers */,
+				AA3FE0D11CFEAF87003E0D14 /* BasicGeometry.h in Headers */,
+				AA3FE0CF1CFEAF87003E0D14 /* IMaterial.h in Headers */,
+				AA3FE0C01CFEAF87003E0D14 /* SHHardwareCanvas.h in Headers */,
+				AA3FE0C71CFEAF87003E0D14 /* Texture.h in Headers */,
+				AA3FE0BB1CFEAF87003E0D14 /* IDecoder.h in Headers */,
+				AA3FE0D01CFEAF87003E0D14 /* AkPoint.h in Headers */,
+				AA3FE0CE1CFEAF87003E0D14 /* SimpleDiffuseLight.h in Headers */,
+				AA3FE0D51CFEAF87003E0D14 /* Transform.h in Headers */,
+				AA3FE0BD1CFEAF87003E0D14 /* IDevice_osx.h in Headers */,
+				AA3FE0C51CFEAF87003E0D14 /* BasicDraw.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		AA0195D41CFE9B8C0016CB1D /* Aiks_lib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA0195E01CFE9B8C0016CB1D /* Build configuration list for PBXNativeTarget "Aiks_lib" */;
+			buildPhases = (
+				AA0195D11CFE9B8C0016CB1D /* Sources */,
+				AA0195D21CFE9B8C0016CB1D /* Frameworks */,
+				AA0195D31CFE9B8C0016CB1D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Aiks_lib;
+			productName = Aiks;
+			productReference = AA0195D51CFE9B8C0016CB1D /* libAiks_lib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA0195CD1CFE9B8C0016CB1D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Saint Hsu";
+				TargetAttributes = {
+					AA0195D41CFE9B8C0016CB1D = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = AA0195D01CFE9B8C0016CB1D /* Build configuration list for PBXProject "Aiks_lib" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AA0195CC1CFE9B8C0016CB1D;
+			productRefGroup = AA0195D61CFE9B8C0016CB1D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA0195D41CFE9B8C0016CB1D /* Aiks_lib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA0195D11CFE9B8C0016CB1D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA3FE0D41CFEAF87003E0D14 /* Transform.cpp in Sources */,
+				AA3FE0CA1CFEAF87003E0D14 /* FakeLight.cpp in Sources */,
+				AA3FE0C81CFEAF87003E0D14 /* Vertex3D.cpp in Sources */,
+				AA3FE0C61CFEAF87003E0D14 /* Texture.cpp in Sources */,
+				AA3FE0D21CFEAF87003E0D14 /* Matrix44.cpp in Sources */,
+				AA3FE0C31CFEAF87003E0D14 /* SHSoftwareCanvas.mm in Sources */,
+				AA3FE0C11CFEAF87003E0D14 /* SHHardwareCanvas.mm in Sources */,
+				AA3FE0C41CFEAF87003E0D14 /* BasicDraw.cpp in Sources */,
+				AA3FE0BE1CFEAF87003E0D14 /* MacDevice.cpp in Sources */,
+				AA3FE0CD1CFEAF87003E0D14 /* SimpleDiffuseLight.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AA0195DE1CFE9B8C0016CB1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		AA0195DF1CFE9B8C0016CB1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		AA0195E11CFE9B8C0016CB1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AA0195E21CFE9B8C0016CB1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA0195D01CFE9B8C0016CB1D /* Build configuration list for PBXProject "Aiks_lib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA0195DE1CFE9B8C0016CB1D /* Debug */,
+				AA0195DF1CFE9B8C0016CB1D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA0195E01CFE9B8C0016CB1D /* Build configuration list for PBXNativeTarget "Aiks_lib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA0195E11CFE9B8C0016CB1D /* Debug */,
+				AA0195E21CFE9B8C0016CB1D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA0195CD1CFE9B8C0016CB1D /* Project object */;
+}

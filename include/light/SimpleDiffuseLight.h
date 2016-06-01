@@ -10,7 +10,7 @@
 #define SimpleDiffuseLight_hpp
 
 #include <stdio.h>
-#include "ILight.h"
+#include "light/ILight.h"
 
 namespace sh{
     class SimpleDiffuseLight: public ILight{

@@ -10,8 +10,8 @@
 #define Transform_hpp
 
 #include <stdio.h>
-#include "BasicGeometry.h"
-#include "Matrix44.hpp"
+#include "math/BasicGeometry.h"
+#include "math/Matrix44.h"
 
 namespace sh{
     class Transform {
@@ -20,10 +20,11 @@ namespace sh{
         ~Transform();
         
         SHVector3D operator*(SHVector3D vector);
+        Transform * operator*=(Transform &t);
         
         static Transform * translate(const SHVector3D &vector);
         static Transform * scale(const SHVector3D &vector);
-        static Transform * rotate(const SHVector3D &vector, float angle);
+        static Transform * rotate(const SHVector3D &vector);
         static Transform * rotate(const float angleX, const float angleY, const float angleZ);
         
         static Transform * perspective(float fov, float clipNear, float clipFar);
