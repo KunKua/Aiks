@@ -6,71 +6,9 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		AA01961A1CFE9C0F0016CB1D /* Aiks.h in Headers */ = {isa = PBXBuildFile; fileRef = AA0195E41CFE9C0F0016CB1D /* Aiks.h */; };
-		AA01961B1CFE9C0F0016CB1D /* AkRefCount.h in Headers */ = {isa = PBXBuildFile; fileRef = AA0195E61CFE9C0F0016CB1D /* AkRefCount.h */; };
-		AA01961C1CFE9C0F0016CB1D /* AkTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = AA0195E71CFE9C0F0016CB1D /* AkTypes.h */; };
-		AA01961D1CFE9C0F0016CB1D /* IDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = AA0195E91CFE9C0F0016CB1D /* IDecoder.h */; };
-		AA01961E1CFE9C0F0016CB1D /* IDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = AA0195EB1CFE9C0F0016CB1D /* IDevice.h */; };
-		AA01961F1CFE9C0F0016CB1D /* IDevice_osx.h in Headers */ = {isa = PBXBuildFile; fileRef = AA0195ED1CFE9C0F0016CB1D /* IDevice_osx.h */; };
-		AA0196201CFE9C0F0016CB1D /* MacDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA0195EE1CFE9C0F0016CB1D /* MacDevice.cpp */; };
-		AA0196211CFE9C0F0016CB1D /* MacDevice.hpp in Headers */ = {isa = PBXBuildFile; fileRef = AA0195EF1CFE9C0F0016CB1D /* MacDevice.hpp */; };
-		AA0196221CFE9C0F0016CB1D /* SHHardwareCanvas.h in Headers */ = {isa = PBXBuildFile; fileRef = AA0195F01CFE9C0F0016CB1D /* SHHardwareCanvas.h */; };
-		AA0196231CFE9C0F0016CB1D /* SHHardwareCanvas.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA0195F11CFE9C0F0016CB1D /* SHHardwareCanvas.mm */; };
-		AA0196241CFE9C0F0016CB1D /* SHSoftwareCanvas.h in Headers */ = {isa = PBXBuildFile; fileRef = AA0195F21CFE9C0F0016CB1D /* SHSoftwareCanvas.h */; };
-		AA0196251CFE9C0F0016CB1D /* SHSoftwareCanvas.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA0195F31CFE9C0F0016CB1D /* SHSoftwareCanvas.mm */; };
-		AA0196261CFE9C0F0016CB1D /* BasicDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA0195F51CFE9C0F0016CB1D /* BasicDraw.cpp */; };
-		AA0196271CFE9C0F0016CB1D /* BasicDraw.hpp in Headers */ = {isa = PBXBuildFile; fileRef = AA0195F61CFE9C0F0016CB1D /* BasicDraw.hpp */; };
-		AA0196281CFE9C0F0016CB1D /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA0195F71CFE9C0F0016CB1D /* Texture.cpp */; };
-		AA0196291CFE9C0F0016CB1D /* Texture.hpp in Headers */ = {isa = PBXBuildFile; fileRef = AA0195F81CFE9C0F0016CB1D /* Texture.hpp */; };
-		AA01962A1CFE9C0F0016CB1D /* FakeLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA0195FA1CFE9C0F0016CB1D /* FakeLight.cpp */; };
-		AA01962B1CFE9C0F0016CB1D /* FakeLight.hpp in Headers */ = {isa = PBXBuildFile; fileRef = AA0195FB1CFE9C0F0016CB1D /* FakeLight.hpp */; };
-		AA01962C1CFE9C0F0016CB1D /* ILight.h in Headers */ = {isa = PBXBuildFile; fileRef = AA0195FC1CFE9C0F0016CB1D /* ILight.h */; };
-		AA01962D1CFE9C0F0016CB1D /* SimpleDiffuseLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA0195FD1CFE9C0F0016CB1D /* SimpleDiffuseLight.cpp */; };
-		AA01962E1CFE9C0F0016CB1D /* SimpleDiffuseLight.hpp in Headers */ = {isa = PBXBuildFile; fileRef = AA0195FE1CFE9C0F0016CB1D /* SimpleDiffuseLight.hpp */; };
-		AA01962F1CFE9C0F0016CB1D /* IMaterial.h in Headers */ = {isa = PBXBuildFile; fileRef = AA0196001CFE9C0F0016CB1D /* IMaterial.h */; };
-		AA0196301CFE9C0F0016CB1D /* AkPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = AA0196021CFE9C0F0016CB1D /* AkPoint.h */; };
-		AA0196311CFE9C0F0016CB1D /* BasicGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = AA0196031CFE9C0F0016CB1D /* BasicGeometry.h */; };
-		AA0196321CFE9C0F0016CB1D /* Matrix44.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA0196041CFE9C0F0016CB1D /* Matrix44.cpp */; };
-		AA0196331CFE9C0F0016CB1D /* Matrix44.hpp in Headers */ = {isa = PBXBuildFile; fileRef = AA0196051CFE9C0F0016CB1D /* Matrix44.hpp */; };
-		AA0196341CFE9C0F0016CB1D /* Transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA0196061CFE9C0F0016CB1D /* Transform.cpp */; };
-		AA0196351CFE9C0F0016CB1D /* Transform.hpp in Headers */ = {isa = PBXBuildFile; fileRef = AA0196071CFE9C0F0016CB1D /* Transform.hpp */; };
-		AA0196361CFE9C0F0016CB1D /* Vertex3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA0196081CFE9C0F0016CB1D /* Vertex3D.cpp */; };
-		AA0196371CFE9C0F0016CB1D /* Vertex3D.hpp in Headers */ = {isa = PBXBuildFile; fileRef = AA0196091CFE9C0F0016CB1D /* Vertex3D.hpp */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
 		AA0195D51CFE9B8C0016CB1D /* libAiks_lib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAiks_lib.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA0195E41CFE9C0F0016CB1D /* Aiks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aiks.h; sourceTree = "<group>"; };
-		AA0195E61CFE9C0F0016CB1D /* AkRefCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AkRefCount.h; sourceTree = "<group>"; };
-		AA0195E71CFE9C0F0016CB1D /* AkTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AkTypes.h; sourceTree = "<group>"; };
-		AA0195E91CFE9C0F0016CB1D /* IDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDecoder.h; sourceTree = "<group>"; };
-		AA0195EB1CFE9C0F0016CB1D /* IDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDevice.h; sourceTree = "<group>"; };
-		AA0195ED1CFE9C0F0016CB1D /* IDevice_osx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDevice_osx.h; sourceTree = "<group>"; };
-		AA0195EE1CFE9C0F0016CB1D /* MacDevice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MacDevice.cpp; sourceTree = "<group>"; };
-		AA0195EF1CFE9C0F0016CB1D /* MacDevice.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MacDevice.hpp; sourceTree = "<group>"; };
-		AA0195F01CFE9C0F0016CB1D /* SHHardwareCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHHardwareCanvas.h; sourceTree = "<group>"; };
-		AA0195F11CFE9C0F0016CB1D /* SHHardwareCanvas.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SHHardwareCanvas.mm; sourceTree = "<group>"; };
-		AA0195F21CFE9C0F0016CB1D /* SHSoftwareCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSoftwareCanvas.h; sourceTree = "<group>"; };
-		AA0195F31CFE9C0F0016CB1D /* SHSoftwareCanvas.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SHSoftwareCanvas.mm; sourceTree = "<group>"; };
-		AA0195F51CFE9C0F0016CB1D /* BasicDraw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BasicDraw.cpp; sourceTree = "<group>"; };
-		AA0195F61CFE9C0F0016CB1D /* BasicDraw.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BasicDraw.hpp; sourceTree = "<group>"; };
-		AA0195F71CFE9C0F0016CB1D /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
-		AA0195F81CFE9C0F0016CB1D /* Texture.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Texture.hpp; sourceTree = "<group>"; };
-		AA0195FA1CFE9C0F0016CB1D /* FakeLight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FakeLight.cpp; sourceTree = "<group>"; };
-		AA0195FB1CFE9C0F0016CB1D /* FakeLight.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FakeLight.hpp; sourceTree = "<group>"; };
-		AA0195FC1CFE9C0F0016CB1D /* ILight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILight.h; sourceTree = "<group>"; };
-		AA0195FD1CFE9C0F0016CB1D /* SimpleDiffuseLight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleDiffuseLight.cpp; sourceTree = "<group>"; };
-		AA0195FE1CFE9C0F0016CB1D /* SimpleDiffuseLight.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SimpleDiffuseLight.hpp; sourceTree = "<group>"; };
-		AA0196001CFE9C0F0016CB1D /* IMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMaterial.h; sourceTree = "<group>"; };
-		AA0196021CFE9C0F0016CB1D /* AkPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AkPoint.h; sourceTree = "<group>"; };
-		AA0196031CFE9C0F0016CB1D /* BasicGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicGeometry.h; sourceTree = "<group>"; };
-		AA0196041CFE9C0F0016CB1D /* Matrix44.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Matrix44.cpp; sourceTree = "<group>"; };
-		AA0196051CFE9C0F0016CB1D /* Matrix44.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Matrix44.hpp; sourceTree = "<group>"; };
-		AA0196061CFE9C0F0016CB1D /* Transform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Transform.cpp; sourceTree = "<group>"; };
-		AA0196071CFE9C0F0016CB1D /* Transform.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Transform.hpp; sourceTree = "<group>"; };
-		AA0196081CFE9C0F0016CB1D /* Vertex3D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vertex3D.cpp; sourceTree = "<group>"; };
-		AA0196091CFE9C0F0016CB1D /* Vertex3D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Vertex3D.hpp; sourceTree = "<group>"; };
+		AA3FE08A1CFEA90B003E0D14 /* include */ = {isa = PBXFileReference; lastKnownFileType = folder; name = include; path = ../include; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +25,7 @@
 		AA0195CC1CFE9B8C0016CB1D = {
 			isa = PBXGroup;
 			children = (
-				AA0195E31CFE9C0F0016CB1D /* include */,
+				AA3FE08A1CFEA90B003E0D14 /* include */,
 				AA0195D61CFE9B8C0016CB1D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -100,108 +38,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AA0195E31CFE9C0F0016CB1D /* include */ = {
-			isa = PBXGroup;
-			children = (
-				AA0195E41CFE9C0F0016CB1D /* Aiks.h */,
-				AA0195E51CFE9C0F0016CB1D /* base */,
-				AA0195E81CFE9C0F0016CB1D /* decoders */,
-				AA0195EA1CFE9C0F0016CB1D /* device */,
-				AA0195F41CFE9C0F0016CB1D /* draw */,
-				AA0195F91CFE9C0F0016CB1D /* light */,
-				AA0195FF1CFE9C0F0016CB1D /* material */,
-				AA0196011CFE9C0F0016CB1D /* math */,
-			);
-			name = include;
-			path = ../include;
-			sourceTree = "<group>";
-		};
-		AA0195E51CFE9C0F0016CB1D /* base */ = {
-			isa = PBXGroup;
-			children = (
-				AA0195E61CFE9C0F0016CB1D /* AkRefCount.h */,
-				AA0195E71CFE9C0F0016CB1D /* AkTypes.h */,
-			);
-			path = base;
-			sourceTree = "<group>";
-		};
-		AA0195E81CFE9C0F0016CB1D /* decoders */ = {
-			isa = PBXGroup;
-			children = (
-				AA0195E91CFE9C0F0016CB1D /* IDecoder.h */,
-			);
-			path = decoders;
-			sourceTree = "<group>";
-		};
-		AA0195EA1CFE9C0F0016CB1D /* device */ = {
-			isa = PBXGroup;
-			children = (
-				AA0195EB1CFE9C0F0016CB1D /* IDevice.h */,
-				AA0195EC1CFE9C0F0016CB1D /* osx */,
-			);
-			path = device;
-			sourceTree = "<group>";
-		};
-		AA0195EC1CFE9C0F0016CB1D /* osx */ = {
-			isa = PBXGroup;
-			children = (
-				AA0195ED1CFE9C0F0016CB1D /* IDevice_osx.h */,
-				AA0195EE1CFE9C0F0016CB1D /* MacDevice.cpp */,
-				AA0195EF1CFE9C0F0016CB1D /* MacDevice.hpp */,
-				AA0195F01CFE9C0F0016CB1D /* SHHardwareCanvas.h */,
-				AA0195F11CFE9C0F0016CB1D /* SHHardwareCanvas.mm */,
-				AA0195F21CFE9C0F0016CB1D /* SHSoftwareCanvas.h */,
-				AA0195F31CFE9C0F0016CB1D /* SHSoftwareCanvas.mm */,
-			);
-			path = osx;
-			sourceTree = "<group>";
-		};
-		AA0195F41CFE9C0F0016CB1D /* draw */ = {
-			isa = PBXGroup;
-			children = (
-				AA0195F51CFE9C0F0016CB1D /* BasicDraw.cpp */,
-				AA0195F61CFE9C0F0016CB1D /* BasicDraw.hpp */,
-				AA0195F71CFE9C0F0016CB1D /* Texture.cpp */,
-				AA0195F81CFE9C0F0016CB1D /* Texture.hpp */,
-			);
-			path = draw;
-			sourceTree = "<group>";
-		};
-		AA0195F91CFE9C0F0016CB1D /* light */ = {
-			isa = PBXGroup;
-			children = (
-				AA0195FA1CFE9C0F0016CB1D /* FakeLight.cpp */,
-				AA0195FB1CFE9C0F0016CB1D /* FakeLight.hpp */,
-				AA0195FC1CFE9C0F0016CB1D /* ILight.h */,
-				AA0195FD1CFE9C0F0016CB1D /* SimpleDiffuseLight.cpp */,
-				AA0195FE1CFE9C0F0016CB1D /* SimpleDiffuseLight.hpp */,
-			);
-			path = light;
-			sourceTree = "<group>";
-		};
-		AA0195FF1CFE9C0F0016CB1D /* material */ = {
-			isa = PBXGroup;
-			children = (
-				AA0196001CFE9C0F0016CB1D /* IMaterial.h */,
-			);
-			path = material;
-			sourceTree = "<group>";
-		};
-		AA0196011CFE9C0F0016CB1D /* math */ = {
-			isa = PBXGroup;
-			children = (
-				AA0196021CFE9C0F0016CB1D /* AkPoint.h */,
-				AA0196031CFE9C0F0016CB1D /* BasicGeometry.h */,
-				AA0196041CFE9C0F0016CB1D /* Matrix44.cpp */,
-				AA0196051CFE9C0F0016CB1D /* Matrix44.hpp */,
-				AA0196061CFE9C0F0016CB1D /* Transform.cpp */,
-				AA0196071CFE9C0F0016CB1D /* Transform.hpp */,
-				AA0196081CFE9C0F0016CB1D /* Vertex3D.cpp */,
-				AA0196091CFE9C0F0016CB1D /* Vertex3D.hpp */,
-			);
-			path = math;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -209,26 +45,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA01961C1CFE9C0F0016CB1D /* AkTypes.h in Headers */,
-				AA0196331CFE9C0F0016CB1D /* Matrix44.hpp in Headers */,
-				AA0196211CFE9C0F0016CB1D /* MacDevice.hpp in Headers */,
-				AA01961B1CFE9C0F0016CB1D /* AkRefCount.h in Headers */,
-				AA0196241CFE9C0F0016CB1D /* SHSoftwareCanvas.h in Headers */,
-				AA01961A1CFE9C0F0016CB1D /* Aiks.h in Headers */,
-				AA0196301CFE9C0F0016CB1D /* AkPoint.h in Headers */,
-				AA01961E1CFE9C0F0016CB1D /* IDevice.h in Headers */,
-				AA01962E1CFE9C0F0016CB1D /* SimpleDiffuseLight.hpp in Headers */,
-				AA01962B1CFE9C0F0016CB1D /* FakeLight.hpp in Headers */,
-				AA0196311CFE9C0F0016CB1D /* BasicGeometry.h in Headers */,
-				AA0196221CFE9C0F0016CB1D /* SHHardwareCanvas.h in Headers */,
-				AA01961D1CFE9C0F0016CB1D /* IDecoder.h in Headers */,
-				AA0196351CFE9C0F0016CB1D /* Transform.hpp in Headers */,
-				AA01962C1CFE9C0F0016CB1D /* ILight.h in Headers */,
-				AA01962F1CFE9C0F0016CB1D /* IMaterial.h in Headers */,
-				AA0196291CFE9C0F0016CB1D /* Texture.hpp in Headers */,
-				AA01961F1CFE9C0F0016CB1D /* IDevice_osx.h in Headers */,
-				AA0196271CFE9C0F0016CB1D /* BasicDraw.hpp in Headers */,
-				AA0196371CFE9C0F0016CB1D /* Vertex3D.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,16 +104,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA0196341CFE9C0F0016CB1D /* Transform.cpp in Sources */,
-				AA0196281CFE9C0F0016CB1D /* Texture.cpp in Sources */,
-				AA0196251CFE9C0F0016CB1D /* SHSoftwareCanvas.mm in Sources */,
-				AA0196321CFE9C0F0016CB1D /* Matrix44.cpp in Sources */,
-				AA0196361CFE9C0F0016CB1D /* Vertex3D.cpp in Sources */,
-				AA01962D1CFE9C0F0016CB1D /* SimpleDiffuseLight.cpp in Sources */,
-				AA0196231CFE9C0F0016CB1D /* SHHardwareCanvas.mm in Sources */,
-				AA01962A1CFE9C0F0016CB1D /* FakeLight.cpp in Sources */,
-				AA0196261CFE9C0F0016CB1D /* BasicDraw.cpp in Sources */,
-				AA0196201CFE9C0F0016CB1D /* MacDevice.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

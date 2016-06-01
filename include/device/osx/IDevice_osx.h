@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "IDevice.h"
+#import "device/IDevice.h"
 
 @protocol IDevice_osx <NSObject>
 

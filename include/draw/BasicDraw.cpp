@@ -6,9 +6,9 @@
 //  Copyright © 2016年 7heaven. All rights reserved.
 //
 
-#include "BasicDraw.hpp"
+#include "draw/BasicDraw.hpp"
 #include <stdlib.h>
-#include "math.h"
+#include <math.h>
 #include <chrono>
 #include <thread>
 

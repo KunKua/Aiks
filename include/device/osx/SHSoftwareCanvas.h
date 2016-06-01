@@ -7,8 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "BasicGeometry.h"
-#import "IDevice_osx.h"
+#import "math/BasicGeometry.h"
+#import "device/osx/IDevice_osx.h"
 
 
 @interface SHSoftwareCanvas : NSImageView <IDevice_osx>

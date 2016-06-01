@@ -6,8 +6,8 @@
 //  Copyright © 2016年 7heaven. All rights reserved.
 //
 
-#include "Transform.hpp"
-#include "math.h"
+#include "math/Transform.h"
+#include <math.h>
 
 namespace sh{
     Transform::Transform()

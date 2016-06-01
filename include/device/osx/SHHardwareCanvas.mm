@@ -6,9 +6,9 @@
 //  Copyright © 2016年 7heaven. All rights reserved.
 //
 
-#import "SHHardwareCanvas.h"
-#import "MacDevice.hpp"
-#import "BasicGeometry.h"
+#import "device/osx/SHHardwareCanvas.h"
+#import "device/osx/MacDevice.h"
+#import "math/BasicGeometry.h"
 
 @implementation SHHardwareCanvas{
     MacDevice *_nativePtr;

@@ -9,8 +9,8 @@
 #ifndef ILight_h
 #define ILight_h
 
-#include "BasicGeometry.h"
-#include "Vertex3D.hpp"
+#include "math/BasicGeometry.h"
+#include "draw/Vertex3D.h"
 
 namespace sh{
     class ILight{

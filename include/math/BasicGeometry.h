@@ -9,8 +9,6 @@
 #ifndef BasicGeometry_h
 #define BasicGeometry_h
 
-namespace aiks {
-
 typedef struct{
     int x;
     int y;
@@ -91,8 +89,6 @@ static inline SHColor SHColorMake(unsigned int color){
                      static_cast<unsigned char>((color >> 16) & 0xFF),
                      static_cast<unsigned char>((color >> 8) & 0xFF),
                      static_cast<unsigned char>(color & 0xFF)};
-}
-
 }
 
 #endif /* BasicGeometry_h */

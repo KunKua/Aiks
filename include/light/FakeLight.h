@@ -10,8 +10,8 @@
 #define FakeLight_hpp
 
 #include <stdio.h>
-#include "ILight.h"
-#include "BasicGeometry.h"
+#include "light/ILight.h"
+#include "math/BasicGeometry.h"
 
 namespace sh{
     class FakeLight : public ILight{

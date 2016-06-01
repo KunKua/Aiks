@@ -10,7 +10,7 @@
 #define Texture_hpp
 
 #include <stdio.h>
-#include "BasicGeometry.h"
+#include "math/BasicGeometry.h"
 
 namespace sh{
     class Texture{

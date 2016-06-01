@@ -9,7 +9,7 @@
 #ifndef IMaterial_h
 #define IMaterial_h
 
-#include "BasicGeometry.h"
+#include "math/BasicGeometry.h"
 
 namespace sh{
     class IMaterial{

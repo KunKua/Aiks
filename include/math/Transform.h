@@ -10,8 +10,8 @@
 #define Transform_hpp
 
 #include <stdio.h>
-#include "BasicGeometry.h"
-#include "Matrix44.hpp"
+#include "math/BasicGeometry.h"
+#include "math/Matrix44.h"
 
 namespace sh{
     class Transform {

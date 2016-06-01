@@ -10,7 +10,7 @@
 #define Vertex3D_hpp
 
 #include <stdio.h>
-#include "BasicGeometry.h"
+#include "math/BasicGeometry.h"
 
 namespace sh{
     class Vertex3D{

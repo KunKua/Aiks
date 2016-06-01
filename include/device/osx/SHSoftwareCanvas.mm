@@ -6,8 +6,8 @@
 //  Copyright © 2016年 7heaven. All rights reserved.
 //
 
-#import "SHSoftwareCanvas.h"
-#import "MacDevice.hpp"
+#import "device/osx/SHSoftwareCanvas.h"
+#import "device/osx/MacDevice.hpp"
 
 #define INSTINCT_SIZE CGSizeMake(20, 20)
 
