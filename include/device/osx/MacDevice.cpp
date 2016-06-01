@@ -6,7 +6,7 @@
 //  Copyright © 2016年 7heaven. All rights reserved.
 //
 
-#include "device/osx/MacDevice.hpp"
+#include "device/osx/MacDevice.h"
 
 MacDevice::MacDevice(id<IDevice_osx> device){
     this->_device = device;

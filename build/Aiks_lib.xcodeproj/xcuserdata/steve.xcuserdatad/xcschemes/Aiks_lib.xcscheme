@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AA0195D41CFE9B8C0016CB1D"
-               BuildableName = "libAiks.a"
-               BlueprintName = "Aiks"
-               ReferencedContainer = "container:Aiks.xcodeproj">
+               BuildableName = "libAiks_lib.a"
+               BlueprintName = "Aiks_lib"
+               ReferencedContainer = "container:Aiks_lib.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,9 +46,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AA0195D41CFE9B8C0016CB1D"
-            BuildableName = "libAiks.a"
-            BlueprintName = "Aiks"
-            ReferencedContainer = "container:Aiks.xcodeproj">
+            BuildableName = "libAiks_lib.a"
+            BlueprintName = "Aiks_lib"
+            ReferencedContainer = "container:Aiks_lib.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -64,9 +64,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AA0195D41CFE9B8C0016CB1D"
-            BuildableName = "libAiks.a"
-            BlueprintName = "Aiks"
-            ReferencedContainer = "container:Aiks.xcodeproj">
+            BuildableName = "libAiks_lib.a"
+            BlueprintName = "Aiks_lib"
+            ReferencedContainer = "container:Aiks_lib.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

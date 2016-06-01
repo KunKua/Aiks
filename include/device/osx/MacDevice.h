@@ -9,9 +9,9 @@
 #ifndef MacDevice_h
 #define MacDevice_h
 
-#include "IDevice.h"
-#include "BasicGeometry.h"
-#include "IDevice_osx.h"
+#include "device/IDevice.h"
+#include "math/BasicGeometry.h"
+#include "device/osx/IDevice_osx.h"
 
 class MacDevice : public sh::IDevice{
 public:
