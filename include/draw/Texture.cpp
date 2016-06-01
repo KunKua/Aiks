@@ -20,7 +20,8 @@ namespace sh{
     SHColor Texture::getPixel(unsigned int u, unsigned int v){
         int pos = v * this->width + u;
         
-        if(pos < 0 || pos >= this->totalSize) return (SHColor){0xFF, 0xFF, 0xFF, 0xFF};
+        while(pos < 0) pos += this->totalSize;
+        while(pos >= this->totalSize) pos -= this->totalSize;
         
         return this->pixels[pos];
     }
