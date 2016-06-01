@@ -6,7 +6,7 @@
 //  Copyright © 2016年 7heaven. All rights reserved.
 //
 
-#include "light/FakeLight.hpp"
+#include "light/FakeLight.h"
 
 namespace sh{
     FakeLight::FakeLight(float m){

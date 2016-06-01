@@ -37,6 +37,8 @@
 		AA3FE0D31CFEAF87003E0D14 /* Matrix44.h in Headers */ = {isa = PBXBuildFile; fileRef = AA3FE0B51CFEAF87003E0D14 /* Matrix44.h */; };
 		AA3FE0D41CFEAF87003E0D14 /* Transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA3FE0B61CFEAF87003E0D14 /* Transform.cpp */; };
 		AA3FE0D51CFEAF87003E0D14 /* Transform.h in Headers */ = {isa = PBXBuildFile; fileRef = AA3FE0B71CFEAF87003E0D14 /* Transform.h */; };
+		AAC2E46F1CFED189003DE9CD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC2E46D1CFED189003DE9CD /* Cocoa.framework */; };
+		AAC2E4701CFED189003DE9CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC2E46E1CFED189003DE9CD /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +49,7 @@
 		AA3FE0971CFEAF87003E0D14 /* IDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDecoder.h; sourceTree = "<group>"; };
 		AA3FE0991CFEAF87003E0D14 /* IDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDevice.h; sourceTree = "<group>"; };
 		AA3FE09B1CFEAF87003E0D14 /* IDevice_osx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDevice_osx.h; sourceTree = "<group>"; };
-		AA3FE09C1CFEAF87003E0D14 /* MacDevice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MacDevice.cpp; sourceTree = "<group>"; };
+		AA3FE09C1CFEAF87003E0D14 /* MacDevice.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = MacDevice.cpp; sourceTree = "<group>"; };
 		AA3FE09D1CFEAF87003E0D14 /* MacDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacDevice.h; sourceTree = "<group>"; };
 		AA3FE09E1CFEAF87003E0D14 /* SHHardwareCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHHardwareCanvas.h; sourceTree = "<group>"; };
 		AA3FE09F1CFEAF87003E0D14 /* SHHardwareCanvas.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SHHardwareCanvas.mm; sourceTree = "<group>"; };
@@ -71,6 +73,8 @@
 		AA3FE0B51CFEAF87003E0D14 /* Matrix44.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix44.h; sourceTree = "<group>"; };
 		AA3FE0B61CFEAF87003E0D14 /* Transform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Transform.cpp; sourceTree = "<group>"; };
 		AA3FE0B71CFEAF87003E0D14 /* Transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transform.h; sourceTree = "<group>"; };
+		AAC2E46D1CFED189003DE9CD /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		AAC2E46E1CFED189003DE9CD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAC2E46F1CFED189003DE9CD /* Cocoa.framework in Frameworks */,
+				AAC2E4701CFED189003DE9CD /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +93,8 @@
 		AA0195CC1CFE9B8C0016CB1D = {
 			isa = PBXGroup;
 			children = (
+				AAC2E46D1CFED189003DE9CD /* Cocoa.framework */,
+				AAC2E46E1CFED189003DE9CD /* Foundation.framework */,
 				AA3FE0911CFEAF87003E0D14 /* include */,
 				AA0195D61CFE9B8C0016CB1D /* Products */,
 			);
@@ -391,6 +399,7 @@
 				EXECUTABLE_PREFIX = lib;
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_ENABLE_CPP_RTTI = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../include";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -401,6 +410,7 @@
 				EXECUTABLE_PREFIX = lib;
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_ENABLE_CPP_RTTI = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../include";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

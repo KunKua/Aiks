@@ -6,7 +6,7 @@
 //  Copyright © 2016年 7heaven. All rights reserved.
 //
 
-#include "light/SimpleDiffuseLight.hpp"
+#include "light/SimpleDiffuseLight.h"
 
 namespace sh {
     SimpleDiffuseLight::SimpleDiffuseLight(float m){
