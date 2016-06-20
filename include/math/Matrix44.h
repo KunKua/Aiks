@@ -45,8 +45,6 @@ public:
     Matrix44 operator*=(Matrix44 &m);
     Matrix44 operator+=(Matrix44 &m);
     
-    SHVector3D operator*(SHVector3D vector);
-    
     Row operator[](const unsigned int pos){
         return Row(pos, *this);
     }

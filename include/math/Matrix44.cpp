@@ -86,32 +86,6 @@ namespace sh{
         
         return *this;
     }
-    
-    SHVector3D Matrix44::operator*(SHVector3D vector){
-        SHVector3D resultVector = (SHVector3D){0, 0, 0, 0};
-        
-        resultVector.x = this->mat[0] * vector.x +
-                         this->mat[1] * vector.y +
-                         this->mat[2] * vector.z +
-                         this->mat[3] * vector.w;
-        
-        resultVector.y = this->mat[4] * vector.x +
-                         this->mat[5] * vector.y +
-                         this->mat[6] * vector.z +
-                         this->mat[7] * vector.w;
-        
-        resultVector.z = this->mat[8] * vector.x +
-                         this->mat[9] * vector.y +
-                         this->mat[10] * vector.z +
-                         this->mat[11] * vector.w;
-        
-        resultVector.w = this->mat[12] * vector.x +
-                         this->mat[13] * vector.y +
-                         this->mat[14] * vector.z +
-                         this->mat[15] * vector.w;
-        
-        return resultVector;
-    }
 
     Matrix44::~Matrix44(){
     }
