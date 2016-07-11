@@ -32,11 +32,11 @@ void MacDevice::flush(SHColor color){
     [this->_device flushWithColor:color];
 }
 
-float MacDevice::getZDepth(SHPoint pos){
+double MacDevice::getZDepth(SHPoint pos){
     return [this->_device getZDepth:pos];
 }
 
-void MacDevice::setZDepth(SHPoint pos, float zDepth){
+void MacDevice::setZDepth(SHPoint pos, double zDepth){
     return [this->_device setZDepth:zDepth position:pos];
 }
 

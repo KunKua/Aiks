@@ -63,6 +63,19 @@ namespace sh{
         return perspective(clipNear);
     }
     
+    Transform * Transform::perspective(float fovy, float aspect, float zn, float zf){
+        Transform *t = new Transform();
+        float fax = 1.0F / (float) tan(fovy * 0.5F * (M_PI / 180));
+        
+        (*t->m)[0][0] = fax;
+        (*t->m)[1][1] = fax;
+        (*t->m)[2][2] = zf / (zf - zn);
+        (*t->m)[2][3] = 1;
+        (*t->m)[3][2] = -zn * zf / (zf - zn);
+        
+        return t;
+    }
+    
     Transform * Transform::perspective(float N){
         Transform *t = new Transform();
         (*t->m)[3][2] = 1.0F / N;

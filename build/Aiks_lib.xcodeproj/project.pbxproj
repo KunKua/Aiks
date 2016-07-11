@@ -39,6 +39,13 @@
 		AA3FE0D51CFEAF87003E0D14 /* Transform.h in Headers */ = {isa = PBXBuildFile; fileRef = AA3FE0B71CFEAF87003E0D14 /* Transform.h */; };
 		AAC2E46F1CFED189003DE9CD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC2E46D1CFED189003DE9CD /* Cocoa.framework */; };
 		AAC2E4701CFED189003DE9CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC2E46E1CFED189003DE9CD /* Foundation.framework */; };
+		F6EAA97E1D313F7400D352BA /* NormalMaterial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6EAA97C1D313F7400D352BA /* NormalMaterial.cpp */; };
+		F6EAA97F1D313F7400D352BA /* NormalMaterial.h in Headers */ = {isa = PBXBuildFile; fileRef = F6EAA97D1D313F7400D352BA /* NormalMaterial.h */; };
+		F6EAA9821D32903F00D352BA /* AbsDecoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6EAA9801D32903F00D352BA /* AbsDecoder.cpp */; };
+		F6EAA9831D32903F00D352BA /* AbsDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = F6EAA9811D32903F00D352BA /* AbsDecoder.h */; };
+		F6EAA9861D329F0200D352BA /* D3DSDecoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6EAA9841D329F0200D352BA /* D3DSDecoder.cpp */; };
+		F6EAA9871D329F0200D352BA /* D3DSDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = F6EAA9851D329F0200D352BA /* D3DSDecoder.h */; };
+		F6EAA98B1D329FF100D352BA /* Object3D.h in Headers */ = {isa = PBXBuildFile; fileRef = F6EAA9891D329FF100D352BA /* Object3D.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +82,14 @@
 		AA3FE0B71CFEAF87003E0D14 /* Transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transform.h; sourceTree = "<group>"; };
 		AAC2E46D1CFED189003DE9CD /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		AAC2E46E1CFED189003DE9CD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F6C165921D2B7EF60014E829 /* mesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = mesh.h; path = geom/mesh.h; sourceTree = "<group>"; };
+		F6EAA97C1D313F7400D352BA /* NormalMaterial.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NormalMaterial.cpp; sourceTree = "<group>"; };
+		F6EAA97D1D313F7400D352BA /* NormalMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalMaterial.h; sourceTree = "<group>"; };
+		F6EAA9801D32903F00D352BA /* AbsDecoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AbsDecoder.cpp; sourceTree = "<group>"; };
+		F6EAA9811D32903F00D352BA /* AbsDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbsDecoder.h; sourceTree = "<group>"; };
+		F6EAA9841D329F0200D352BA /* D3DSDecoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = D3DSDecoder.cpp; sourceTree = "<group>"; };
+		F6EAA9851D329F0200D352BA /* D3DSDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = D3DSDecoder.h; sourceTree = "<group>"; };
+		F6EAA9891D329FF100D352BA /* Object3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Object3D.h; path = geom/Object3D.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +126,7 @@
 		AA3FE0911CFEAF87003E0D14 /* include */ = {
 			isa = PBXGroup;
 			children = (
+				F6C165911D2B7ED30014E829 /* geom */,
 				AA3FE0921CFEAF87003E0D14 /* Aiks.h */,
 				AA3FE0931CFEAF87003E0D14 /* base */,
 				AA3FE0961CFEAF87003E0D14 /* decoders */,
@@ -137,6 +153,10 @@
 			isa = PBXGroup;
 			children = (
 				AA3FE0971CFEAF87003E0D14 /* IDecoder.h */,
+				F6EAA9801D32903F00D352BA /* AbsDecoder.cpp */,
+				F6EAA9811D32903F00D352BA /* AbsDecoder.h */,
+				F6EAA9841D329F0200D352BA /* D3DSDecoder.cpp */,
+				F6EAA9851D329F0200D352BA /* D3DSDecoder.h */,
 			);
 			path = decoders;
 			sourceTree = "<group>";
@@ -193,6 +213,8 @@
 			isa = PBXGroup;
 			children = (
 				AA3FE0B01CFEAF87003E0D14 /* IMaterial.h */,
+				F6EAA97C1D313F7400D352BA /* NormalMaterial.cpp */,
+				F6EAA97D1D313F7400D352BA /* NormalMaterial.h */,
 			);
 			path = material;
 			sourceTree = "<group>";
@@ -210,6 +232,15 @@
 			path = math;
 			sourceTree = "<group>";
 		};
+		F6C165911D2B7ED30014E829 /* geom */ = {
+			isa = PBXGroup;
+			children = (
+				F6C165921D2B7EF60014E829 /* mesh.h */,
+				F6EAA9891D329FF100D352BA /* Object3D.h */,
+			);
+			name = geom;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -217,6 +248,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6EAA98B1D329FF100D352BA /* Object3D.h in Headers */,
 				AA3FE0BA1CFEAF87003E0D14 /* AkTypes.h in Headers */,
 				AA3FE0CC1CFEAF87003E0D14 /* ILight.h in Headers */,
 				AA3FE0B91CFEAF87003E0D14 /* AkRefCount.h in Headers */,
@@ -225,16 +257,19 @@
 				AA3FE0C21CFEAF87003E0D14 /* SHSoftwareCanvas.h in Headers */,
 				AA3FE0BC1CFEAF87003E0D14 /* IDevice.h in Headers */,
 				AA3FE0C91CFEAF87003E0D14 /* Vertex3D.h in Headers */,
+				F6EAA9871D329F0200D352BA /* D3DSDecoder.h in Headers */,
 				AA3FE0BF1CFEAF87003E0D14 /* MacDevice.h in Headers */,
 				AA3FE0CB1CFEAF87003E0D14 /* FakeLight.h in Headers */,
 				AA3FE0D11CFEAF87003E0D14 /* BasicGeometry.h in Headers */,
 				AA3FE0CF1CFEAF87003E0D14 /* IMaterial.h in Headers */,
+				F6EAA9831D32903F00D352BA /* AbsDecoder.h in Headers */,
 				AA3FE0C01CFEAF87003E0D14 /* SHHardwareCanvas.h in Headers */,
 				AA3FE0C71CFEAF87003E0D14 /* Texture.h in Headers */,
 				AA3FE0BB1CFEAF87003E0D14 /* IDecoder.h in Headers */,
 				AA3FE0D01CFEAF87003E0D14 /* AkPoint.h in Headers */,
 				AA3FE0CE1CFEAF87003E0D14 /* SimpleDiffuseLight.h in Headers */,
 				AA3FE0D51CFEAF87003E0D14 /* Transform.h in Headers */,
+				F6EAA97F1D313F7400D352BA /* NormalMaterial.h in Headers */,
 				AA3FE0BD1CFEAF87003E0D14 /* IDevice_osx.h in Headers */,
 				AA3FE0C51CFEAF87003E0D14 /* BasicDraw.h in Headers */,
 			);
@@ -303,9 +338,12 @@
 				AA3FE0D21CFEAF87003E0D14 /* Matrix44.cpp in Sources */,
 				AA3FE0C31CFEAF87003E0D14 /* SHSoftwareCanvas.mm in Sources */,
 				AA3FE0C11CFEAF87003E0D14 /* SHHardwareCanvas.mm in Sources */,
+				F6EAA97E1D313F7400D352BA /* NormalMaterial.cpp in Sources */,
 				AA3FE0C41CFEAF87003E0D14 /* BasicDraw.cpp in Sources */,
 				AA3FE0BE1CFEAF87003E0D14 /* MacDevice.cpp in Sources */,
 				AA3FE0CD1CFEAF87003E0D14 /* SimpleDiffuseLight.cpp in Sources */,
+				F6EAA9821D32903F00D352BA /* AbsDecoder.cpp in Sources */,
+				F6EAA9861D329F0200D352BA /* D3DSDecoder.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,6 +28,7 @@ namespace sh{
         static Transform * rotate(const float angleX, const float angleY, const float angleZ);
         
         static Transform * perspective(float fov, float clipNear, float clipFar);
+        static Transform * perspective(float fovy, float aspect, float zn, float zf);
         static Transform * perspective(float N);
         static Transform * lookAt(const SHPoint3D &cameraPos, const SHVector3D &directionVector);
         

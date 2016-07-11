@@ -10,14 +10,24 @@
 #define IDecoder_h
 
 #include <string.h>
+#include <stdint.h>
+#include <stdio.h>
 
 namespace sh{
+    
+template<typename T>
 class IDecoder{
 public:
-    virtual std::string getFormat() = 0;
+    virtual T decode(const char * path) = 0;
     
-    virtual ~IDecoder();
-}
+protected:
+    virtual size_t readU8(uint8_t &buffer) = 0;
+    virtual size_t readU16(uint16_t &buffer) = 0;
+    virtual size_t readU32(uint32_t &buffer) = 0;
+    virtual size_t readU64(uint64_t &buffer) = 0;
+    
+    FILE *fp;
+};
 }
 
 #endif

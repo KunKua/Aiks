@@ -14,7 +14,7 @@
 namespace sh{
     class IMaterial{
     public:
-        virtual SHColor compute(SHPointF uv) = 0;
+        virtual SHColor compute(SHVector3D input, SHVector3D output) = 0;
     };
 }
 

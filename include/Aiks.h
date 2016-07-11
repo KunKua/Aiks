@@ -117,6 +117,8 @@
 #include "light/SimpleDiffuseLight.h"
 #include "math/Matrix44.h"
 #include "math/Transform.h"
+#include "geom/Object3D.h"
+#include "decoders/D3DSDecoder.h"
 
 #if AK_TARGET_PLATFORM == AK_PLATFORM_MAC
 #include "device/osx/MacDevice.h"

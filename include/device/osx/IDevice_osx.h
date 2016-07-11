@@ -17,8 +17,8 @@
 - (void) flushWithDirtyRect:(SHRect) dirtyRect color:(SHColor) color;
 - (void) flushWithColor:(SHColor) color;
 
-- (float) getZDepth:(SHPoint) pos;
-- (void) setZDepth:(float) zDepth position:(SHPoint) pos;
+- (double) getZDepth:(SHPoint) pos;
+- (void) setZDepth:(double) zDepth position:(SHPoint) pos;
 - (SHRect) getBounds;
 
 - (void) update;

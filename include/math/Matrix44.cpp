@@ -54,7 +54,7 @@ namespace sh{
     }
     
     void Matrix44::toIdentity(){
-        memset(this->mat, 0, sizeof(float) * 16);
+        memset(&this->mat, 0, sizeof(float) * 16);
         this->mat[0] = 1;
         this->mat[5] = 1;
         this->mat[10] = 1;
