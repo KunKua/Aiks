@@ -117,6 +117,7 @@
 #include "light/SimpleDiffuseLight.h"
 #include "math/Matrix44.h"
 #include "math/Transform.h"
+#include "math/math.h"
 #include "geom/Object3D.h"
 #include "decoders/D3DSDecoder.h"
 

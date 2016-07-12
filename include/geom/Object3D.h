@@ -23,6 +23,7 @@ typedef struct Mesh3D{
     SHUVCoorF *_uvmaps;
     
     SHVector3D *_vertexesNormal;
+    SHVector3D *_trianglesNormal;
     
     uint64_t _vertexSize;
     uint64_t _trianglesSize;

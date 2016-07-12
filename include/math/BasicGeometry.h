@@ -96,4 +96,14 @@ static inline SHColor SHColorMake(unsigned int color){
                      static_cast<unsigned char>(color & 0xFF)};
 }
 
+static inline SHVector3D SHVector3DPlus(const SHVector3D &a, const SHVector3D &b){
+    SHVector3D result;
+    result.x = a.x + b.x;
+    result.y = a.y + b.y;
+    result.z = a.z + b.z;
+    result.w = 1.0F;
+    
+    return result;
+}
+
 #endif /* BasicGeometry_h */

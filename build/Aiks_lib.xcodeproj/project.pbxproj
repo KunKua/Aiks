@@ -82,6 +82,7 @@
 		AA3FE0B71CFEAF87003E0D14 /* Transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transform.h; sourceTree = "<group>"; };
 		AAC2E46D1CFED189003DE9CD /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		AAC2E46E1CFED189003DE9CD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F683CBD51D35076800DFEDFB /* math.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = math.h; sourceTree = "<group>"; };
 		F6C165921D2B7EF60014E829 /* mesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = mesh.h; path = geom/mesh.h; sourceTree = "<group>"; };
 		F6EAA97C1D313F7400D352BA /* NormalMaterial.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NormalMaterial.cpp; sourceTree = "<group>"; };
 		F6EAA97D1D313F7400D352BA /* NormalMaterial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalMaterial.h; sourceTree = "<group>"; };
@@ -228,6 +229,7 @@
 				AA3FE0B51CFEAF87003E0D14 /* Matrix44.h */,
 				AA3FE0B61CFEAF87003E0D14 /* Transform.cpp */,
 				AA3FE0B71CFEAF87003E0D14 /* Transform.h */,
+				F683CBD51D35076800DFEDFB /* math.h */,
 			);
 			path = math;
 			sourceTree = "<group>";

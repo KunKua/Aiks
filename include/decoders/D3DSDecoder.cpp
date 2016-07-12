@@ -8,6 +8,9 @@
 
 #include "D3DSDecoder.h"
 #include <stdlib.h>
+#include <map>
+#include "math/math.h"
+#include <math.h>
 
 #define          HEAD3DS 0x4D4D //header of 3ds file
 #define            ED3DS 0x3D3D //main editor block
@@ -105,6 +108,8 @@ namespace sh{
         
     }
     
+    
+    //>>>>>main entry of 3ds file decoding<<<<<
     Object3D * D3DSDecoder::decode(const char * path){
         this->fp = fopen(path, "rb");
         printf("path:%s\n", path);
@@ -384,6 +389,8 @@ namespace sh{
     void D3DSDecoder::decodeMesh(Mesh3D &mesh, Chunk *meshChunk){
         Chunk subchunk = *readChunk();
         
+        std::multimap<int, int> v2tMap;
+        
         while(ftell(this->fp) <= subchunk._ins_length - 6){
             switch(subchunk._chunk_head){
                 case TRI_VERTEXL:
@@ -421,6 +428,8 @@ namespace sh{
                     mesh._triangles = (SHSimpleTri *) malloc(sizeof(SHSimpleTri) * rlength);
                     mesh._trianglesSize = rlength;
                     
+                    mesh._trianglesNormal = (SHVector3D *) malloc(sizeof(SHVector3D) * rlength);
+                    
                     while(rlength-- > 0){
                         readU16(a), readU16(b), readU16(c), readU16(info);
                         
@@ -429,6 +438,12 @@ namespace sh{
                         mesh._triangles[count].c = c;
                         
                         printf(">>>>%d:face->a:%d, b:%d, c:%d, info:%d\n", count, mesh._triangles[count].a, mesh._triangles[count].b, mesh._triangles[count].c, info);
+                        
+                        int max_index = a > b ? (a > c ? a : c) : (b > c ? b : c);
+                        
+                        v2tMap.insert(std::pair<int, int>(a, count));
+                        v2tMap.insert(std::pair<int, int>(b, count));
+                        v2tMap.insert(std::pair<int, int>(c, count));
                         
                         count++;
                     }
@@ -466,9 +481,65 @@ namespace sh{
         }
         
         //temp
+        bool needInsertUV = false;
         if(mesh._uvmaps == nullptr){
             mesh._uvmaps = (SHUVCoorF *) malloc(sizeof(SHUVCoorF) * mesh._vertexSize);
-            for(int i = 0; i < mesh._vertexSize; i++){
+            needInsertUV = true;
+        }
+        
+        
+        //calculate triangle normal for convienience
+        mesh._trianglesNormal = (SHVector3D *) malloc(sizeof(SHVector3D) * mesh._trianglesSize);
+        for(int i = 0; i < mesh._trianglesSize; i++){
+            SHSimpleTri tri = mesh._triangles[i];
+            
+            SHVector3D a = mesh._vertexes[tri.a];
+            SHVector3D b = mesh._vertexes[tri.b];
+            SHVector3D c = mesh._vertexes[tri.c];
+            
+            SHVector3D ca = SHVector3DMake(c.x - a.x, c.y - a.y, c.z - a.z, 1.0F);
+            SHVector3D ba = SHVector3DMake(b.x - a.x, b.y - a.y, b.z - a.z, 1.0F);
+            
+            SHVector3D normal = crossProduct(ba, ca);
+            
+            double m = sqrt(normal.x * normal.x + normal.y * normal.y + normal.z * normal.z);
+            
+            normal.x /= m;
+            normal.y /= m;
+            normal.z /= m;
+            
+            mesh._trianglesNormal[i] = normal;
+        }
+        
+        //calculate all vertex's normal based on the normal of triangles attached to it
+        mesh._vertexesNormal = (SHVector3D *) malloc(sizeof(SHVector3D) * mesh._vertexSize);
+        for(int i = 0; i < mesh._vertexSize; i++){
+            SHVector3D normal;
+            
+            auto pair = v2tMap.equal_range(i);
+            normal.w = -1;
+            int count = 1;
+            for(std::multimap<int, int>::iterator it = pair.first; it != pair.second; ++it){
+                uint32_t tri_index = (*it).second;
+                
+                if(normal.w == -1){
+                    normal = mesh._trianglesNormal[tri_index];
+                    continue;
+                }else{
+                    normal = plus(normal, mesh._trianglesNormal[tri_index]);
+                }
+                
+                count++;
+            }
+            
+            normal.x /= count;
+            normal.y /= count;
+            normal.z /= count;
+            
+            mesh._vertexesNormal[i] = normal;
+            
+            
+            if(needInsertUV){
                 mesh._uvmaps[i].u = 0.0F;
                 mesh._uvmaps[i].v = 0.0F;
             }
