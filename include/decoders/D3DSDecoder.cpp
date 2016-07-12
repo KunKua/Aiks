@@ -96,7 +96,6 @@
 #define ED_UNKN13 0x2000
 #define ED_UNKN14 0xAFFF
 
-
 namespace sh{
     D3DSDecoder::D3DSDecoder(){
         
@@ -111,22 +110,19 @@ namespace sh{
         printf("path:%s\n", path);
         if(this->fp != NULL){
             
-            struct Object3D *object = (Object3D *)malloc(sizeof(struct Object3D));
+            Object3D *object = (Object3D *)malloc(sizeof(Object3D));
             
-            struct Mesh3D *meshes;
-            uint32_t meshesCount = -1;
+            int meshIndex = 0;
+            Mesh3D *meshes;
             
-            uint16_t chunk;
-            uint32_t length;
+            //>>>>>3DS file defined chunk structure<<<<<
+            Chunk *chunk = readChunk();
             
-            size_t chunkRead = readU16(chunk);
-            size_t lengthRead = readU32(length);
-            
-            const size_t fileSize = length;
+            const size_t fileSize = chunk->_chunk_length;
             
             while(this->fp->_offset < fileSize){
                 
-                switch(chunk){
+                switch(chunk->_chunk_head){
                     case HEAD3DS:
                         printf("\n>>>>>header<<<<<\n");
                         printf("\n");
@@ -140,77 +136,34 @@ namespace sh{
                     {
                         printf("\n>>>>>object<<<<<\n");
                         
-                        uint32_t intrinsicLength = ftell(this->fp) + length - 6;
-                        
                         uint8_t size;
                         do{
                             readU8(size);
                         }while(size != 0);
                         
-                        uint16_t subchunk;
-                        uint32_t sublength;
+                        Chunk *subchunk = readChunk();
                         
-                        readU16(subchunk);
-                        
-                        while(ftell(this->fp) <= intrinsicLength - 6){
-                            switch(subchunk){
-                                case OBJ_TRIMESH:{
-                                    readU32(sublength);
-                                    printf(">>>>>trimesh<<<<<\n");
+                        switch(subchunk->_chunk_head){
+                            case OBJ_TRIMESH:
+                            {
+                                if(meshIndex == 0){
+                                    object->_meshes = (Mesh3D *) malloc(sizeof(Mesh3D));
+                                }else{
+                                    object->_meshes = (Mesh3D *) realloc(object->_meshes, sizeof(Mesh3D) * (meshIndex + 1));
                                 }
-                                    break;
-                                case TRI_VERTEXL:
-                                {
-                                    
-                                    uint32_t x, y, z;
-                                    uint16_t rlength;
-                                    readU16(rlength);
-                                    int count = 0;
-                                    while(rlength-- > 0){
-                                        readU32(x), readU32(y), readU32(z);
-                                        
-                                        //TODO record vertex coor to current mesh
-                                        printf(">>>%d:ver->x:%f, y:%f, z:%f\n", count++, *((float*)&x), *((float*)&y), *((float*)&z));
-                                    }
-                                }
-                                    break;
-                                case TRI_FACEL:
-                                {
-                                    uint16_t a, b, c, info;
-                                    uint16_t rlength;
-                                    readU16(rlength);
-                                    int count = 0;
-                                    while(rlength-- > 0){
-                                        readU16(a), readU16(b), readU16(c), readU16(info);
-                                        
-                                        printf(">>>>%d:face->a:%d, b:%d, c:%d, info:%d\n", count++, a, b, c, info);
-                                    }
-                                }
-                                    break;
-                                case TRI_MAPPINGCOORS:
-                                {
-                                    uint32_t u, v;
-                                    uint16_t rlength;
-                                    readU16(rlength);
-                                    int count = 0;
-                                    while(rlength-- > 0){
-                                        readU32(u), readU32(v);
-                                        
-                                        printf(">>>>%d:uvmap->u:%f, v:%f\n", count++, *((float*)&u), *((float*)&v));
-                                    }
-                                }
-                                    break;
-                                default:
-                                    printf("sub:%04X of chunk:%04X, length:%d\n", subchunk, chunk, sublength);
-                                    fseek(this->fp, sublength - 6, SEEK_CUR);
-                                    break;
+                                
+                                meshes = (Mesh3D *) malloc(sizeof(Mesh3D));
+                                decodeMesh(*meshes, subchunk);
+                                
+                                object->_meshes[meshIndex] = *meshes;
+                                meshIndex++;
                             }
-                            
-                            readU16(subchunk);
-                            readU32(sublength);
+                                break;
+                            default:
+                                break;
                         }
                         
-                        fseek(this->fp, intrinsicLength, SEEK_SET);
+                        fseek(this->fp, chunk->_ins_length, SEEK_SET);
                         printf("\n");
 
                     }
@@ -221,7 +174,7 @@ namespace sh{
                         uint16_t subchunk;
                         uint32_t sublength;
                         
-                        const uint32_t ins_length = ftell(this->fp) + length - 6;
+                        const uint32_t ins_length = ftell(this->fp) + chunk->_content_length;
                         
                         readU16(subchunk);
                         readU32(sublength);
@@ -392,7 +345,7 @@ namespace sh{
                                 }
                                     break;
                                 default:
-                                    printf("unknown_sub:%04X of chunk:%04X, length:%d\n", subchunk, chunk, sublength);
+                                    printf("unknown_sub:%04X of chunk:%04X, length:%d\n", subchunk, chunk->_chunk_head, sublength);
                                     fseek(this->fp, sublength - 6, SEEK_CUR);
                                     break;
                                     
@@ -408,19 +361,139 @@ namespace sh{
                     }
                         break;
                     default:
-                        printf("chunk:0x%04X, length:%d\n", chunk, length);
-                        fseek(this->fp, length - 6, SEEK_CUR);
+                        printf("chunk:0x%04X, length:%d\n", chunk->_chunk_head, chunk->_chunk_length);
+                        fseek(this->fp, chunk->_content_length, SEEK_CUR);
                         break;
                 }
                 
                 
-                chunkRead = readU16(chunk);
-                lengthRead = readU32(length);
+                delete chunk;
+                chunk = readChunk();
             }
             
             fclose(this->fp);
+            
+            object->_mesh_count = meshIndex;
+            
+            return object;
         }
         
         return NULL;
+    }
+    
+    void D3DSDecoder::decodeMesh(Mesh3D &mesh, Chunk *meshChunk){
+        Chunk subchunk = *readChunk();
+        
+        while(ftell(this->fp) <= subchunk._ins_length - 6){
+            switch(subchunk._chunk_head){
+                case TRI_VERTEXL:
+                {
+                    uint32_t x, y, z;
+                    uint16_t rlength;
+                    readU16(rlength);
+                    int count = 0;
+                    
+                    mesh._vertexes = (SHVector3D *) malloc(sizeof(SHVector3D) * rlength);
+                    mesh._vertexSize = rlength;
+                    
+                    while(rlength-- > 0){
+                        readU32(x), readU32(y), readU32(z);
+
+                        mesh._vertexes[count].x = *((float*)&x);
+                        mesh._vertexes[count].y = *((float*)&y);
+                        mesh._vertexes[count].z = *((float*)&z);
+                        mesh._vertexes[count].w = 1.0F;
+                        
+                        printf(">>>%d:ver->x:%f, y:%f, z:%f\n", count, mesh._vertexes[count].x, mesh._vertexes[count].y, mesh._vertexes[count].z);
+                        
+                        count++;
+                    }
+                    
+                }
+                    break;
+                case TRI_FACEL:
+                {
+                    uint16_t a, b, c, info;
+                    uint16_t rlength;
+                    readU16(rlength);
+                    int count = 0;
+                    
+                    mesh._triangles = (SHSimpleTri *) malloc(sizeof(SHSimpleTri) * rlength);
+                    mesh._trianglesSize = rlength;
+                    
+                    while(rlength-- > 0){
+                        readU16(a), readU16(b), readU16(c), readU16(info);
+                        
+                        mesh._triangles[count].a = a;
+                        mesh._triangles[count].b = b;
+                        mesh._triangles[count].c = c;
+                        
+                        printf(">>>>%d:face->a:%d, b:%d, c:%d, info:%d\n", count, mesh._triangles[count].a, mesh._triangles[count].b, mesh._triangles[count].c, info);
+                        
+                        count++;
+                    }
+                }
+                    break;
+                case TRI_MAPPINGCOORS:
+                {
+                    uint32_t u, v;
+                    uint16_t rlength;
+                    readU16(rlength);
+                    int count = 0;
+                    
+                    mesh._uvmaps = (SHUVCoorF *) malloc(sizeof(SHUVCoorF) * rlength);
+                    
+                    while(rlength-- > 0){
+                        readU32(u), readU32(v);
+                        
+                        mesh._uvmaps[count].u = *((float*)&u);
+                        mesh._uvmaps[count].v = *((float*)&v);
+                        
+                        printf(">>>>%d:uvmap->u:%f, v:%f\n", count, mesh._uvmaps[count].u, mesh._uvmaps[count].v);
+                        
+                        count++;
+                    }
+                }
+                    break;
+                default:
+                    printf("sub:%04X, length:%d\n", subchunk._chunk_head, subchunk._chunk_length);
+                    fseek(this->fp, subchunk._content_length, SEEK_CUR);
+                    break;
+                    
+            }
+            
+            subchunk = *readChunk();
+        }
+        
+        //temp
+        if(mesh._uvmaps == nullptr){
+            mesh._uvmaps = (SHUVCoorF *) malloc(sizeof(SHUVCoorF) * mesh._vertexSize);
+            for(int i = 0; i < mesh._vertexSize; i++){
+                mesh._uvmaps[i].u = 0.0F;
+                mesh._uvmaps[i].v = 0.0F;
+            }
+        }
+        
+        fseek(this->fp, meshChunk->_ins_length, SEEK_SET);
+        
+    }
+    
+    Chunk * D3DSDecoder::readChunk(){
+        if(this->fp == nullptr) return nullptr;
+        
+        Chunk *result = (Chunk *) malloc(sizeof(Chunk));
+        
+        result->_checksum_head = readU16(result->_chunk_head);
+        result->_checksum_length = readU32(result->_chunk_length);
+        
+        if(result->_chunk_length >= 6){
+            result->_content_length = result->_chunk_length - 6;
+        }else{
+            result->_content_length = 0;
+        }
+        
+        result->_ins_length = ftell(this->fp) + result->_content_length;
+        
+        return result;
     }
 }

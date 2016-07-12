@@ -20,7 +20,7 @@ typedef struct Edge3D{
 typedef struct Mesh3D{
     SHVector3D *_vertexes;
     SHSimpleTri *_triangles;
-    SHPointF *_uvmaps;
+    SHUVCoorF *_uvmaps;
     
     SHVector3D *_vertexesNormal;
     
@@ -29,8 +29,8 @@ typedef struct Mesh3D{
 };
 
 typedef struct Object3D{
-    uint64_t meshCount;
-    struct Mesh3D meshes[1];
+    uint64_t _mesh_count;
+    Mesh3D *_meshes;
 }Object3D;
 
 #endif /* Object3D_h */

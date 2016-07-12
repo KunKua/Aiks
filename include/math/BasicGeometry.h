@@ -9,55 +9,60 @@
 #ifndef BasicGeometry_h
 #define BasicGeometry_h
 
-typedef struct{
+typedef struct SHPoint{
     int x;
     int y;
 }SHPoint;
 
-typedef struct{
+typedef struct SHPointF{
     float x;
     float y;
 }SHPointF;
 
-typedef struct{
+typedef struct SHUVCoorF{
+    float u;
+    float v;
+}SHUVCoorF;
+
+typedef struct SHPoint3D{
     float x;
     float y;
     float z;
 }SHPoint3D;
 
-typedef struct{
+typedef struct SHTriangle{
     SHPointF a;
     SHPointF b;
     SHPointF c;
 }SHTriangle;
 
-typedef struct{
+typedef struct SHTriangle3D{
     SHPoint3D a;
     SHPoint3D b;
     SHPoint3D c;
 }SHTriangle3D;
 
-typedef struct{
+typedef struct SHSimpleTri{
     unsigned int a;
     unsigned int b;
     unsigned int c;
 }SHSimpleTri;
 
-typedef struct{
+typedef struct SHRect{
     int x;
     int y;
     int w;
     int h;
 }SHRect;
 
-typedef struct{
+typedef struct SHVector3D{
     float x;
     float y;
     float z;
     float w;
 }SHVector3D;
 
-typedef struct{
+typedef struct SHColor{
     unsigned char a;
     unsigned char r;
     unsigned char g;
