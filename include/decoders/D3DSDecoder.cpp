@@ -227,6 +227,7 @@ namespace sh{
                         readU32(sublength);
 //
                         while(ftell(this->fp) <= ins_length - 6){
+                            printf("subchunk:0x%04X\n", subchunk);
                             switch(subchunk){
                                 case MAT_N01:
                                 {
@@ -275,21 +276,27 @@ namespace sh{
                                     readU16(sschunk);
                                     readU32(sslength);
                                     
-                                    switch(sschunk){
-                                        case 0xA300:
-                                        {
-                                            printf("\n map name:");
-                                            do{
-                                                readU8(buffer);
-                                                printf("%c", buffer);
-                                            }while(sslength-- > 6);
-                                            
-                                            printf("\n");
+                                    while(ftell(this->fp) <= ins_length - 6){
+                                        switch(sschunk){
+                                            case 0xA300:
+                                            {
+                                                printf("\n map name:");
+                                                do{
+                                                    readU8(buffer);
+                                                    printf("%c", buffer);
+                                                }while(sslength-- > 7);
+                                                
+                                                printf("\n");
+                                            }
+                                                break;
+                                            default:
+                                                printf("sschunk:0x%04X\n", sschunk);
+                                                fseek(this->fp, sslength - 6, SEEK_CUR);
+                                                break;
                                         }
-                                            break;
-                                        default:
-                                            fseek(this->fp, sslength - 6, SEEK_CUR);
-                                            break;
+                                        
+                                        readU16(sschunk);
+                                        readU32(sslength);
                                     }
                                     
                                     
@@ -312,21 +319,27 @@ namespace sh{
                                     readU16(sschunk);
                                     readU32(sslength);
                                     
-                                    switch(sschunk){
-                                        case 0xA300:
-                                        {
-                                            printf("\n map name:");
-                                            do{
-                                                readU8(buffer);
-                                                printf("%c", buffer);
-                                            }while(sslength-- > 6);
-                                            
-                                            printf("\n");
+                                    while(ftell(this->fp) <= ins_length - 6){
+                                        switch(sschunk){
+                                            case 0xA300:
+                                            {
+                                                printf("\n map name:");
+                                                do{
+                                                    readU8(buffer);
+                                                    printf("%c", buffer);
+                                                }while(sslength-- > 7);
+                                                
+                                                printf("\n");
+                                            }
+                                                break;
+                                            default:
+                                                printf("sschunk:0x%04X\n", sschunk);
+                                                fseek(this->fp, sslength - 6, SEEK_CUR);
+                                                break;
                                         }
-                                            break;
-                                        default:
-                                            fseek(this->fp, sslength - 6, SEEK_CUR);
-                                            break;
+                                        
+                                        readU16(sschunk);
+                                        readU32(sslength);
                                     }
                                     
                                     
@@ -349,20 +362,27 @@ namespace sh{
                                     readU16(sschunk);
                                     readU32(sslength);
                                     
-                                    switch(sschunk){
-                                        case 0xA300:
-                                        {
-                                            printf("\n map name:");
-                                            do{
-                                                readU8(buffer);
-                                                printf("%c", buffer);
-                                            }while(sslength-- > 6);
-                                            
-                                            printf("\n");
+                                    while(ftell(this->fp) <= ins_length - 6){
+                                        switch(sschunk){
+                                            case 0xA300:
+                                            {
+                                                printf("\n map name:");
+                                                do{
+                                                    readU8(buffer);
+                                                    printf("%c", buffer);
+                                                }while(sslength-- > 7);
+                                                
+                                                printf("\n");
+                                            }
+                                                break;
+                                            default:
+                                                printf("sschunk:0x%04X\n", sschunk);
+                                                fseek(this->fp, sslength - 6, SEEK_CUR);
+                                                break;
                                         }
-                                            break;
-                                        default:
-                                            fseek(this->fp, sslength - 6, SEEK_CUR);
+                                        
+                                        readU16(sschunk);
+                                        readU32(sslength);
                                     }
                                     
                                     
