@@ -13,6 +13,17 @@ namespace sh {
         this->m = m;
     }
     
+    SHColor SimpleDiffuseLight::compute(SHColor inputPixelColor, float input_m){
+        float tmp_m = this->m;
+        this->m = input_m;
+        
+        SHColor result = compute(inputPixelColor);
+        
+        this->m = tmp_m;
+        
+        return result;
+    }
+    
     SHColor SimpleDiffuseLight::compute(SHColor inputPixelColor){
         unsigned char red;
         unsigned char green;

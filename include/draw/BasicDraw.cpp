@@ -235,6 +235,10 @@ namespace sh{
             float iz = rz * ba_y_length;
             vertexTmp->pos.z = a->pos.z + iz;
             
+            float rm = (float) (c->normal_m - a->normal_m) / ca_y_length;
+            float im = rm * ba_y_length;
+            vertexTmp->normal_m = a->normal_m + im;
+            
             //对拆分后的三角面片进行绘制
             drawSubPerspTri(device, a, b, vertexTmp, texture, light);
             drawSubPerspTri(device, vertexTmp, b, c, texture, light);
@@ -259,6 +263,8 @@ namespace sh{
         float rightIu;
         float leftIv;
         float rightIv;
+        float leftM;
+        float rightM;
         
         float leftIzStep;
         float rightIzStep;
@@ -266,6 +272,8 @@ namespace sh{
         float rightIuStep;
         float leftIvStep;
         float rightIvStep;
+        float leftMStep;
+        float rightMStep;
         
         float y_length = (y1 - y0);
         
@@ -289,6 +297,8 @@ namespace sh{
             rightIu = right->u;
             leftIv = left->v;
             rightIv = right->v;
+            leftM = left->normal_m;
+            rightM = right->normal_m;
             
             leftIzStep = (float) (c->pos.z - a->pos.z) / y_length;
             rightIzStep = (float) (c->pos.z - b->pos.z) / y_length;
@@ -296,6 +306,8 @@ namespace sh{
             rightIuStep = (float) (c->u - b->u) / y_length;
             leftIvStep = (float) (c->v - a->v) / y_length;
             rightIvStep = (float) (c->v - b->v) / y_length;
+            leftMStep = (float) (c->normal_m - a->normal_m) / y_length;
+            rightMStep = (float) (c->normal_m - b->normal_m) / y_length;
             
         }else{
             if(b->screenPos.x > c->screenPos.x){
@@ -316,6 +328,8 @@ namespace sh{
             rightIu = right->u;
             leftIv = left->v;
             rightIv = right->v;
+            leftM = left->normal_m;
+            rightM = right->normal_m;
             
             leftIzStep = (float) (b->pos.z - a->pos.z) / y_length;
             rightIzStep = (float) (c->pos.z - a->pos.z) / y_length;
@@ -323,6 +337,8 @@ namespace sh{
             rightIuStep = (float) (c->u - a->u) / y_length;
             leftIvStep = (float) (b->v - a->v) / y_length;
             rightIvStep = (float) (c->v - a->v) / y_length;
+            leftMStep = (float) (b->normal_m - a->normal_m) / y_length;
+            rightMStep = (float) (c->normal_m - a->normal_m) / y_length;
         }
         
         float leftX = left->screenPos.x;
@@ -332,6 +348,7 @@ namespace sh{
             float xIz = leftIz;
             float xIu = leftIu;
             float xIv = leftIv;
+            float xM = leftM;
             
             float x_length = (float) (rightX - leftX);
             if(x_length == 0) x_length = 1.0F;
@@ -340,6 +357,7 @@ namespace sh{
             float xIzStep = (rightIz - leftIz) / x_length;
             float xIuStep = (rightIu - leftIu) / x_length;
             float xIvStep = (rightIv - leftIv) / x_length;
+            float xMStep = (rightM - leftM) / x_length;
             
             for(int xStep = leftX; xStep <= rightX; xStep++){
                 
@@ -356,7 +374,7 @@ namespace sh{
                 
                 //光线计算
                 if(&light != NULL){
-                    c = light.compute(c);
+                    c = light.compute(c, xM);
                 }
                 
                 float z = 1 / xIz;
@@ -371,6 +389,7 @@ namespace sh{
                 xIz += xIzStep;
                 xIu += xIuStep;
                 xIv += xIvStep;
+                xM += xMStep;
             }
             
             //y轴方向的相关量递增
@@ -380,6 +399,8 @@ namespace sh{
             rightIu += rightIuStep;
             leftIv += leftIvStep;
             rightIv += rightIvStep;
+            leftM += leftMStep;
+            rightM += rightMStep;
             
             leftX += leftXStep;
             rightX += rightXStep;

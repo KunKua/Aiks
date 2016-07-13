@@ -19,7 +19,8 @@ namespace sh{
         ~Vertex3D();
         
         SHVector3D pos;
-        SHPoint3D normal;
+        SHVector3D normal;
+        float normal_m;
         
         float u;
         float v;

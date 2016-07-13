@@ -15,6 +15,7 @@
 namespace sh{
     class ILight{
     public:
+        virtual SHColor compute(SHColor inputPixelColor, float input_m) = 0;
         virtual SHColor compute(SHColor inputPixelColor) = 0;
         virtual SHColor compute(const Vertex3D &a,
                                 const Vertex3D &b,

@@ -513,6 +513,7 @@ namespace sh{
         
         //calculate all vertex's normal based on the normal of triangles attached to it
         mesh._vertexesNormal = (SHVector3D *) malloc(sizeof(SHVector3D) * mesh._vertexSize);
+        mesh._vertexesNormal_m = (float *) malloc(sizeof(float) * mesh._vertexSize);
         for(int i = 0; i < mesh._vertexSize; i++){
             SHVector3D normal;
             
@@ -538,6 +539,7 @@ namespace sh{
             
             mesh._vertexesNormal[i] = normal;
             
+            mesh._vertexesNormal_m[i] = (float) sqrt(normal.x * normal.x + normal.y * normal.y + normal.z * normal.z);
             
             if(needInsertUV){
                 mesh._uvmaps[i].u = 0.0F;

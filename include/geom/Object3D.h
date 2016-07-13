@@ -22,6 +22,8 @@ typedef struct Mesh3D{
     SHSimpleTri *_triangles;
     SHUVCoorF *_uvmaps;
     
+    float *_vertexesNormal_m;
+    
     SHVector3D *_vertexesNormal;
     SHVector3D *_trianglesNormal;
     
