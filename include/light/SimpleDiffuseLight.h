@@ -16,6 +16,7 @@ namespace sh{
     class SimpleDiffuseLight: public ILight{
     public:
         SimpleDiffuseLight(float m);
+        ~SimpleDiffuseLight();
         SHColor compute(SHColor inputPixelColor, float input_m);
         SHColor compute(SHColor inputPixelColor);
         SHColor compute(const Vertex3D &a,

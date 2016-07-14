@@ -15,6 +15,7 @@
 namespace sh{
     class ILight{
     public:
+        ~ILight(){}
         virtual SHColor compute(SHColor inputPixelColor, float input_m) = 0;
         virtual SHColor compute(SHColor inputPixelColor) = 0;
         virtual SHColor compute(const Vertex3D &a,
@@ -23,5 +24,7 @@ namespace sh{
                                 SHColor inputPixelColor) = 0;
     };
 }
+
+
 
 #endif /* ILight_h */

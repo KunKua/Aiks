@@ -13,6 +13,9 @@ namespace sh {
         this->m = m;
     }
     
+    SimpleDiffuseLight::~SimpleDiffuseLight(){
+    }
+    
     SHColor SimpleDiffuseLight::compute(SHColor inputPixelColor, float input_m){
         float tmp_m = this->m;
         this->m = input_m;

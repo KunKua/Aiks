@@ -17,6 +17,7 @@ namespace sh{
     class FakeLight : public ILight{
     public:
         FakeLight(float m);
+        ~FakeLight();
         SHColor compute(SHColor inputPixelColor, float input_m);
         SHColor compute(SHColor inputPixelColor);
         SHColor compute(const Vertex3D &a,

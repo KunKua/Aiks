@@ -15,7 +15,7 @@
 typedef struct Edge3D{
     SHVector3D _vertex0;
     SHVector3D _vertex1;
-};
+}Edge3D;
 
 typedef struct Mesh3D{
     SHVector3D *_vertexes;
@@ -29,7 +29,7 @@ typedef struct Mesh3D{
     
     uint64_t _vertexSize;
     uint64_t _trianglesSize;
-};
+}Mesh3D;
 
 typedef struct Object3D{
     uint64_t _mesh_count;

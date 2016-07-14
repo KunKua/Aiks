@@ -370,18 +370,19 @@ namespace sh{
                 float realV = v * texture.height;
                 
                 //获取纹理坐标对应颜色值
-                SHColor c = texture.getPixel(realU, realV);
+                SHColor col = texture.getPixel(realU, realV);
+//                SHColor col = SHColorMake(0xFF0099CC);
                 
                 //光线计算
                 if(&light != NULL){
-                    c = light.compute(c, xM);
+                    col = light.compute(col, xM);
                 }
                 
                 float z = 1 / xIz;
                 
                 if(z <= device.getZDepth(SHPointMake(xStep, yStep))){
                     //绘制扫描线位置
-                    device.setPixel((SHPoint){xStep, yStep}, c);
+                    device.setPixel((SHPoint){xStep, yStep}, col);
                     device.setZDepth(SHPointMake(xStep, yStep), z);
                 }
                 

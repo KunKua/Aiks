@@ -391,7 +391,7 @@ namespace sh{
         
         std::multimap<int, int> v2tMap;
         
-        while(ftell(this->fp) <= subchunk._ins_length - 6){
+        while(ftell(this->fp) <= meshChunk->_ins_length - 6){
             switch(subchunk._chunk_head){
                 case TRI_VERTEXL:
                 {
@@ -472,7 +472,7 @@ namespace sh{
                     break;
                 default:
                     printf("sub:%04X, length:%d\n", subchunk._chunk_head, subchunk._chunk_length);
-                    fseek(this->fp, subchunk._content_length, SEEK_CUR);
+                    fseek(this->fp, subchunk._ins_length, SEEK_SET);
                     break;
                     
             }
