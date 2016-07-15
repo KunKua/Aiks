@@ -143,8 +143,11 @@
 }
 
 - (void) update{
+    if(_imageBackend != nil){
+        CFRelease(_imageBackend);
+    }
     _imageBackend = [self createCGImageWithSize:self.bounds.size];
-    self.image = [[NSImage alloc] initWithCGImage:_imageBackend size:self.bounds.size];
+    self.layer.contents = (__bridge id)_imageBackend;
     memset(_zDepth, 600, sizeof(double) * _canvasPixelSize);
 }
 

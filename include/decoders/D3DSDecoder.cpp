@@ -121,13 +121,13 @@ namespace sh{
             Mesh3D *meshes;
             
             //>>>>>3DS file defined chunk structure<<<<<
-            Chunk *chunk = readChunk();
+            Chunk chunk = readChunk();
             
-            const size_t fileSize = chunk->_chunk_length;
+            const size_t fileSize = chunk._chunk_length;
             
             while(this->fp->_offset < fileSize){
                 
-                switch(chunk->_chunk_head){
+                switch(chunk._chunk_head){
                     case HEAD3DS:
                         printf("\n>>>>>header<<<<<\n");
                         printf("\n");
@@ -146,9 +146,9 @@ namespace sh{
                             readU8(size);
                         }while(size != 0);
                         
-                        Chunk *subchunk = readChunk();
+                        Chunk subchunk = readChunk();
                         
-                        switch(subchunk->_chunk_head){
+                        switch(subchunk._chunk_head){
                             case OBJ_TRIMESH:
                             {
                                 if(meshIndex == 0){
@@ -168,7 +168,7 @@ namespace sh{
                                 break;
                         }
                         
-                        fseek(this->fp, chunk->_ins_length, SEEK_SET);
+                        fseek(this->fp, chunk._ins_length, SEEK_SET);
                         printf("\n");
 
                     }
@@ -179,7 +179,7 @@ namespace sh{
                         uint16_t subchunk;
                         uint32_t sublength;
                         
-                        const uint32_t ins_length = ftell(this->fp) + chunk->_content_length;
+                        const uint32_t ins_length = ftell(this->fp) + chunk._content_length;
                         
                         readU16(subchunk);
                         readU32(sublength);
@@ -350,7 +350,7 @@ namespace sh{
                                 }
                                     break;
                                 default:
-                                    printf("unknown_sub:%04X of chunk:%04X, length:%d\n", subchunk, chunk->_chunk_head, sublength);
+                                    printf("unknown_sub:%04X of chunk:%04X, length:%d\n", subchunk, chunk._chunk_head, sublength);
                                     fseek(this->fp, sublength - 6, SEEK_CUR);
                                     break;
                                     
@@ -366,13 +366,12 @@ namespace sh{
                     }
                         break;
                     default:
-                        printf("chunk:0x%04X, length:%d\n", chunk->_chunk_head, chunk->_chunk_length);
-                        fseek(this->fp, chunk->_content_length, SEEK_CUR);
+                        printf("chunk:0x%04X, length:%d\n", chunk._chunk_head, chunk._chunk_length);
+                        fseek(this->fp, chunk._content_length, SEEK_CUR);
                         break;
                 }
                 
                 
-                delete chunk;
                 chunk = readChunk();
             }
             
@@ -386,12 +385,12 @@ namespace sh{
         return NULL;
     }
     
-    void D3DSDecoder::decodeMesh(Mesh3D &mesh, Chunk *meshChunk){
-        Chunk subchunk = *readChunk();
+    void D3DSDecoder::decodeMesh(Mesh3D &mesh, Chunk meshChunk){
+        Chunk subchunk = readChunk();
         
         std::multimap<int, int> v2tMap;
         
-        while(ftell(this->fp) <= meshChunk->_ins_length - 6){
+        while(ftell(this->fp) <= meshChunk._ins_length - 6){
             switch(subchunk._chunk_head){
                 case TRI_VERTEXL:
                 {
@@ -477,7 +476,7 @@ namespace sh{
                     
             }
             
-            subchunk = *readChunk();
+            subchunk = readChunk();
         }
         
         //temp
@@ -547,25 +546,26 @@ namespace sh{
             }
         }
         
-        fseek(this->fp, meshChunk->_ins_length, SEEK_SET);
+        fseek(this->fp, meshChunk._ins_length, SEEK_SET);
         
     }
     
-    Chunk * D3DSDecoder::readChunk(){
-        if(this->fp == nullptr) return nullptr;
+    Chunk D3DSDecoder::readChunk(){
         
-        Chunk *result = (Chunk *) malloc(sizeof(Chunk));
+        Chunk result;
         
-        result->_checksum_head = readU16(result->_chunk_head);
-        result->_checksum_length = readU32(result->_chunk_length);
+        if(this->fp == nullptr) return result;
         
-        if(result->_chunk_length >= 6){
-            result->_content_length = result->_chunk_length - 6;
+        result._checksum_head = readU16(result._chunk_head);
+        result._checksum_length = readU32(result._chunk_length);
+        
+        if(result._chunk_length >= 6){
+            result._content_length = result._chunk_length - 6;
         }else{
-            result->_content_length = 0;
+            result._content_length = 0;
         }
         
-        result->_ins_length = ftell(this->fp) + result->_content_length;
+        result._ins_length = ftell(this->fp) + result._content_length;
         
         return result;
     }

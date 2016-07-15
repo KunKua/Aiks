@@ -41,9 +41,9 @@ namespace sh{
         
         Object3D * decode(const char * path);
     private:
-        Chunk * readChunk();
+        Chunk readChunk();
         
-        void decodeMesh(Mesh3D &mesh, Chunk *meshChunk);
+        void decodeMesh(Mesh3D &mesh, Chunk meshChunk);
         void decodeMaterial();
     };
 }
