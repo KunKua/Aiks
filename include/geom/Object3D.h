@@ -18,14 +18,14 @@ typedef struct Edge3D{
 }Edge3D;
 
 typedef struct Mesh3D{
-    SHVector3D *_vertexes;
-    SHSimpleTri *_triangles;
-    SHUVCoorF *_uvmaps;
+    SHVector3D *_vertexes; //all vertexes in this mesh
+    SHSimpleTri *_triangles; //all triangles in mesh, refer to the index of the _vertexes array
+    SHUVCoorF *_uvmaps; //uvmap array
     
-    float *_vertexesNormal_m;
+    float *_vertexesNormal_m;// modulo of each vertex's normal vector based on the triangles it's in
     
-    SHVector3D *_vertexesNormal;
-    SHVector3D *_trianglesNormal;
+    SHVector3D *_vertexesNormal; //vertex's normal vector
+    SHVector3D *_trianglesNormal; //triangle's normal vector
     
     uint64_t _vertexSize;
     uint64_t _trianglesSize;
