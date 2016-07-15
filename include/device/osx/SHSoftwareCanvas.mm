@@ -13,8 +13,9 @@
 
 @implementation SHSoftwareCanvas{
     CGImageRef _imageBackend;
-    unsigned char *_rawData;
+    
     CGSize _backendSize;
+    unsigned char *_rawData;
     unsigned long _rawDataSize;
     unsigned long _canvasPixelSize;
     
@@ -143,11 +144,8 @@
 }
 
 - (void) update{
-    if(_imageBackend != nil){
-        CFRelease(_imageBackend);
-    }
-    _imageBackend = [self createCGImageWithSize:self.bounds.size];
-    self.layer.contents = (__bridge id)_imageBackend;
+    
+    [self.layer setNeedsDisplay];
     memset(_zDepth, 600, sizeof(double) * _canvasPixelSize);
 }
 
@@ -156,6 +154,10 @@
     
     [self initImageBackend];
     [self initZDepthMap];
+}
+
+const void * getBytePointerCallback(void *info){
+    return info;
 }
 
 - (CGImageRef) createCGImageWithSize:(CGSize) size{
@@ -168,10 +170,14 @@
     
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     
-    CGDataProviderRef provider = CGDataProviderCreateWithData(NULL,
-                                                              _rawData,
-                                                              _rawDataSize,
-                                                              NULL);
+    CGDataProviderDirectCallbacks directCallback;
+    directCallback.version = 0;
+    directCallback.getBytePointer = getBytePointerCallback;
+    directCallback.releaseBytePointer = NULL;
+    directCallback.getBytesAtPosition = NULL;
+    directCallback.releaseInfo = NULL;
+    
+    CGDataProviderRef provider = CGDataProviderCreateDirect(_rawData, _rawDataSize, &directCallback);
     
     CGImageRef image = CGImageCreate(size.width,
                                       size.height,
