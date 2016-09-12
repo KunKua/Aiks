@@ -371,7 +371,6 @@ namespace sh{
                 
                 //获取纹理坐标对应颜色值
                 SHColor col = texture.getPixelF(realU, realV);
-                //                SHColor col = SHColorMake(0xFFCC9900);
                 
                 //光线计算
                 if(&light != NULL){
