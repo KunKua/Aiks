@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include "math/BasicGeometry.h"
 #include "device/IDevice.h"
-#include "draw/Vertex3D.h"
+#include "geom/Vertex3D.h"
 #include "draw/Texture.h"
 #include "light/ILight.h"
 

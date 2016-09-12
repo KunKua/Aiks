@@ -6,7 +6,7 @@
 //  Copyright © 2016年 7heaven. All rights reserved.
 //
 
-#include "BasicDraw.hpp"
+#include "draw/BasicDraw.h"
 #include <stdlib.h>
 #include "math.h"
 #include <chrono>
@@ -352,7 +352,7 @@ namespace sh{
                 float realV = v * texture.height;
                 
                 //获取纹理坐标对应颜色值
-                SHColor c = texture.getPixel(realU, realV);
+                SHColor c = texture.getPixelF(realU, realV);
                 
                 //光线计算
                 if(&light != NULL){

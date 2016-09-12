@@ -6,7 +6,7 @@
 //  Copyright © 2016年 7heaven. All rights reserved.
 //
 
-#include "draw/Vertex3D.h"
+#include "geom/Vertex3D.h"
 
 namespace sh{
     Vertex3D::Vertex3D()

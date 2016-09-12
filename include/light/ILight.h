@@ -10,7 +10,7 @@
 #define ILight_h
 
 #include "math/BasicGeometry.h"
-#include "draw/Vertex3D.h"
+#include "geom/Vertex3D.h"
 
 namespace sh{
     class ILight{

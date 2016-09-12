@@ -19,12 +19,8 @@
 		AA3FE0C11CFEAF87003E0D14 /* SHHardwareCanvas.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA3FE09F1CFEAF87003E0D14 /* SHHardwareCanvas.mm */; };
 		AA3FE0C21CFEAF87003E0D14 /* SHSoftwareCanvas.h in Headers */ = {isa = PBXBuildFile; fileRef = AA3FE0A01CFEAF87003E0D14 /* SHSoftwareCanvas.h */; };
 		AA3FE0C31CFEAF87003E0D14 /* SHSoftwareCanvas.mm in Sources */ = {isa = PBXBuildFile; fileRef = AA3FE0A11CFEAF87003E0D14 /* SHSoftwareCanvas.mm */; };
-		AA3FE0C41CFEAF87003E0D14 /* BasicDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA3FE0A31CFEAF87003E0D14 /* BasicDraw.cpp */; };
 		AA3FE0C51CFEAF87003E0D14 /* BasicDraw.h in Headers */ = {isa = PBXBuildFile; fileRef = AA3FE0A41CFEAF87003E0D14 /* BasicDraw.h */; };
-		AA3FE0C61CFEAF87003E0D14 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA3FE0A51CFEAF87003E0D14 /* Texture.cpp */; };
 		AA3FE0C71CFEAF87003E0D14 /* Texture.h in Headers */ = {isa = PBXBuildFile; fileRef = AA3FE0A61CFEAF87003E0D14 /* Texture.h */; };
-		AA3FE0C81CFEAF87003E0D14 /* Vertex3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA3FE0A71CFEAF87003E0D14 /* Vertex3D.cpp */; };
-		AA3FE0C91CFEAF87003E0D14 /* Vertex3D.h in Headers */ = {isa = PBXBuildFile; fileRef = AA3FE0A81CFEAF87003E0D14 /* Vertex3D.h */; };
 		AA3FE0CA1CFEAF87003E0D14 /* FakeLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA3FE0AA1CFEAF87003E0D14 /* FakeLight.cpp */; };
 		AA3FE0CB1CFEAF87003E0D14 /* FakeLight.h in Headers */ = {isa = PBXBuildFile; fileRef = AA3FE0AB1CFEAF87003E0D14 /* FakeLight.h */; };
 		AA3FE0CC1CFEAF87003E0D14 /* ILight.h in Headers */ = {isa = PBXBuildFile; fileRef = AA3FE0AC1CFEAF87003E0D14 /* ILight.h */; };
@@ -39,6 +35,13 @@
 		AA3FE0D51CFEAF87003E0D14 /* Transform.h in Headers */ = {isa = PBXBuildFile; fileRef = AA3FE0B71CFEAF87003E0D14 /* Transform.h */; };
 		AAC2E46F1CFED189003DE9CD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC2E46D1CFED189003DE9CD /* Cocoa.framework */; };
 		AAC2E4701CFED189003DE9CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC2E46E1CFED189003DE9CD /* Foundation.framework */; };
+		F657BD3D1D866AA800736037 /* ColorTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = F657BD3B1D866AA800736037 /* ColorTexture.h */; };
+		F657BD411D867D4000736037 /* MappingTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = F657BD3F1D867D4000736037 /* MappingTexture.h */; };
+		F657BD441D86833800736037 /* BasicDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F657BD431D86833800736037 /* BasicDraw.cpp */; };
+		F657BD461D86834B00736037 /* Vertex3D.h in Headers */ = {isa = PBXBuildFile; fileRef = F657BD451D86834B00736037 /* Vertex3D.h */; };
+		F657BD481D86837100736037 /* Vertex3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F657BD471D86837100736037 /* Vertex3D.cpp */; };
+		F657BD4C1D86838300736037 /* ColorTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F657BD491D86838300736037 /* ColorTexture.cpp */; };
+		F657BD4D1D86838300736037 /* MappingTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F657BD4A1D86838300736037 /* MappingTexture.cpp */; };
 		F6EAA97E1D313F7400D352BA /* NormalMaterial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6EAA97C1D313F7400D352BA /* NormalMaterial.cpp */; };
 		F6EAA97F1D313F7400D352BA /* NormalMaterial.h in Headers */ = {isa = PBXBuildFile; fileRef = F6EAA97D1D313F7400D352BA /* NormalMaterial.h */; };
 		F6EAA9821D32903F00D352BA /* AbsDecoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F6EAA9801D32903F00D352BA /* AbsDecoder.cpp */; };
@@ -62,12 +65,8 @@
 		AA3FE09F1CFEAF87003E0D14 /* SHHardwareCanvas.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SHHardwareCanvas.mm; sourceTree = "<group>"; };
 		AA3FE0A01CFEAF87003E0D14 /* SHSoftwareCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHSoftwareCanvas.h; sourceTree = "<group>"; };
 		AA3FE0A11CFEAF87003E0D14 /* SHSoftwareCanvas.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SHSoftwareCanvas.mm; sourceTree = "<group>"; };
-		AA3FE0A31CFEAF87003E0D14 /* BasicDraw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BasicDraw.cpp; sourceTree = "<group>"; };
 		AA3FE0A41CFEAF87003E0D14 /* BasicDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicDraw.h; sourceTree = "<group>"; };
-		AA3FE0A51CFEAF87003E0D14 /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
 		AA3FE0A61CFEAF87003E0D14 /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
-		AA3FE0A71CFEAF87003E0D14 /* Vertex3D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vertex3D.cpp; sourceTree = "<group>"; };
-		AA3FE0A81CFEAF87003E0D14 /* Vertex3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vertex3D.h; sourceTree = "<group>"; };
 		AA3FE0AA1CFEAF87003E0D14 /* FakeLight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FakeLight.cpp; sourceTree = "<group>"; };
 		AA3FE0AB1CFEAF87003E0D14 /* FakeLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeLight.h; sourceTree = "<group>"; };
 		AA3FE0AC1CFEAF87003E0D14 /* ILight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILight.h; sourceTree = "<group>"; };
@@ -82,6 +81,13 @@
 		AA3FE0B71CFEAF87003E0D14 /* Transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transform.h; sourceTree = "<group>"; };
 		AAC2E46D1CFED189003DE9CD /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		AAC2E46E1CFED189003DE9CD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F657BD3B1D866AA800736037 /* ColorTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorTexture.h; sourceTree = "<group>"; };
+		F657BD3F1D867D4000736037 /* MappingTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MappingTexture.h; sourceTree = "<group>"; };
+		F657BD431D86833800736037 /* BasicDraw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BasicDraw.cpp; path = ../../src/draw/BasicDraw.cpp; sourceTree = "<group>"; };
+		F657BD451D86834B00736037 /* Vertex3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vertex3D.h; path = geom/Vertex3D.h; sourceTree = "<group>"; };
+		F657BD471D86837100736037 /* Vertex3D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Vertex3D.cpp; path = ../src/draw/Vertex3D.cpp; sourceTree = "<group>"; };
+		F657BD491D86838300736037 /* ColorTexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ColorTexture.cpp; path = ../../src/draw/ColorTexture.cpp; sourceTree = "<group>"; };
+		F657BD4A1D86838300736037 /* MappingTexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MappingTexture.cpp; path = ../../src/draw/MappingTexture.cpp; sourceTree = "<group>"; };
 		F683CBD51D35076800DFEDFB /* math.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = math.h; sourceTree = "<group>"; };
 		F6C165921D2B7EF60014E829 /* mesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = mesh.h; path = geom/mesh.h; sourceTree = "<group>"; };
 		F6EAA97C1D313F7400D352BA /* NormalMaterial.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NormalMaterial.cpp; sourceTree = "<group>"; };
@@ -188,12 +194,13 @@
 		AA3FE0A21CFEAF87003E0D14 /* draw */ = {
 			isa = PBXGroup;
 			children = (
-				AA3FE0A31CFEAF87003E0D14 /* BasicDraw.cpp */,
+				F657BD491D86838300736037 /* ColorTexture.cpp */,
+				F657BD4A1D86838300736037 /* MappingTexture.cpp */,
+				F657BD431D86833800736037 /* BasicDraw.cpp */,
 				AA3FE0A41CFEAF87003E0D14 /* BasicDraw.h */,
-				AA3FE0A51CFEAF87003E0D14 /* Texture.cpp */,
 				AA3FE0A61CFEAF87003E0D14 /* Texture.h */,
-				AA3FE0A71CFEAF87003E0D14 /* Vertex3D.cpp */,
-				AA3FE0A81CFEAF87003E0D14 /* Vertex3D.h */,
+				F657BD3B1D866AA800736037 /* ColorTexture.h */,
+				F657BD3F1D867D4000736037 /* MappingTexture.h */,
 			);
 			path = draw;
 			sourceTree = "<group>";
@@ -237,6 +244,8 @@
 		F6C165911D2B7ED30014E829 /* geom */ = {
 			isa = PBXGroup;
 			children = (
+				F657BD471D86837100736037 /* Vertex3D.cpp */,
+				F657BD451D86834B00736037 /* Vertex3D.h */,
 				F6C165921D2B7EF60014E829 /* mesh.h */,
 				F6EAA9891D329FF100D352BA /* Object3D.h */,
 			);
@@ -255,16 +264,17 @@
 				AA3FE0CC1CFEAF87003E0D14 /* ILight.h in Headers */,
 				AA3FE0B91CFEAF87003E0D14 /* AkRefCount.h in Headers */,
 				AA3FE0B81CFEAF87003E0D14 /* Aiks.h in Headers */,
+				F657BD461D86834B00736037 /* Vertex3D.h in Headers */,
 				AA3FE0D31CFEAF87003E0D14 /* Matrix44.h in Headers */,
 				AA3FE0C21CFEAF87003E0D14 /* SHSoftwareCanvas.h in Headers */,
 				AA3FE0BC1CFEAF87003E0D14 /* IDevice.h in Headers */,
-				AA3FE0C91CFEAF87003E0D14 /* Vertex3D.h in Headers */,
 				F6EAA9871D329F0200D352BA /* D3DSDecoder.h in Headers */,
 				AA3FE0BF1CFEAF87003E0D14 /* MacDevice.h in Headers */,
 				AA3FE0CB1CFEAF87003E0D14 /* FakeLight.h in Headers */,
 				AA3FE0D11CFEAF87003E0D14 /* BasicGeometry.h in Headers */,
 				AA3FE0CF1CFEAF87003E0D14 /* IMaterial.h in Headers */,
 				F6EAA9831D32903F00D352BA /* AbsDecoder.h in Headers */,
+				F657BD411D867D4000736037 /* MappingTexture.h in Headers */,
 				AA3FE0C01CFEAF87003E0D14 /* SHHardwareCanvas.h in Headers */,
 				AA3FE0C71CFEAF87003E0D14 /* Texture.h in Headers */,
 				AA3FE0BB1CFEAF87003E0D14 /* IDecoder.h in Headers */,
@@ -272,6 +282,7 @@
 				AA3FE0CE1CFEAF87003E0D14 /* SimpleDiffuseLight.h in Headers */,
 				AA3FE0D51CFEAF87003E0D14 /* Transform.h in Headers */,
 				F6EAA97F1D313F7400D352BA /* NormalMaterial.h in Headers */,
+				F657BD3D1D866AA800736037 /* ColorTexture.h in Headers */,
 				AA3FE0BD1CFEAF87003E0D14 /* IDevice_osx.h in Headers */,
 				AA3FE0C51CFEAF87003E0D14 /* BasicDraw.h in Headers */,
 			);
@@ -333,15 +344,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F657BD4D1D86838300736037 /* MappingTexture.cpp in Sources */,
 				AA3FE0D41CFEAF87003E0D14 /* Transform.cpp in Sources */,
 				AA3FE0CA1CFEAF87003E0D14 /* FakeLight.cpp in Sources */,
-				AA3FE0C81CFEAF87003E0D14 /* Vertex3D.cpp in Sources */,
-				AA3FE0C61CFEAF87003E0D14 /* Texture.cpp in Sources */,
+				F657BD4C1D86838300736037 /* ColorTexture.cpp in Sources */,
 				AA3FE0D21CFEAF87003E0D14 /* Matrix44.cpp in Sources */,
+				F657BD441D86833800736037 /* BasicDraw.cpp in Sources */,
 				AA3FE0C31CFEAF87003E0D14 /* SHSoftwareCanvas.mm in Sources */,
 				AA3FE0C11CFEAF87003E0D14 /* SHHardwareCanvas.mm in Sources */,
+				F657BD481D86837100736037 /* Vertex3D.cpp in Sources */,
 				F6EAA97E1D313F7400D352BA /* NormalMaterial.cpp in Sources */,
-				AA3FE0C41CFEAF87003E0D14 /* BasicDraw.cpp in Sources */,
 				AA3FE0BE1CFEAF87003E0D14 /* MacDevice.cpp in Sources */,
 				AA3FE0CD1CFEAF87003E0D14 /* SimpleDiffuseLight.cpp in Sources */,
 				F6EAA9821D32903F00D352BA /* AbsDecoder.cpp in Sources */,

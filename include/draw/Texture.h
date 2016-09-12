@@ -13,31 +13,27 @@
 #include "math/BasicGeometry.h"
 
 namespace sh{
+    
+    enum FilterType{
+        None,
+        Bilinear,
+        Trilinear,
+        Anisotropic
+    };
+    
     class Texture{
     public:
-        Texture(SHColor *pixels, unsigned int width, unsigned int height);
-        ~Texture();
         
-        SHColor getPixel(unsigned int u, unsigned int v);
-        SHColor getPixelF(float u, float v);
-        SHColor getPixelFiltered(unsigned int u, unsigned int v,
-                                 unsigned int lu, unsigned int lv,
-                                 unsigned int tu, unsigned int tv,
-                                 unsigned int ru, unsigned int rv,
-                                 unsigned int bu, unsigned int bv);
+        virtual void setFilterType(FilterType type) = 0;
+        virtual FilterType getFilterType() = 0;
+        
+        virtual SHColor getPixel(unsigned int x, unsigned int y) = 0;
+        virtual SHColor getPixelF(float u, float v) = 0;
         
         unsigned int width;
         unsigned int height;
-    private:
-        SHColor mixARGB(SHColor a, SHColor b, float mixedValue);
-        SHColor mixRGB(SHColor a, SHColor b, float mixedValue);
-# pragma mark TODO
-        SHColor mixColors(unsigned int su, unsigned int sv,
-                          unsigned int eu, unsigned int ev);
-        
-        SHColor *pixels;
-        
-        unsigned int totalSize;
+    protected:
+        FilterType type;
     };
 }
 

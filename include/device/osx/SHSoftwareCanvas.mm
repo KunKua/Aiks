@@ -145,7 +145,16 @@
 
 - (void) update{
     
-    [self.layer setNeedsDisplay];
+    if(_imageBackend != nil){
+        CFRelease(_imageBackend);
+    }
+    
+    _imageBackend = [self createCGImageWithSize:self.bounds.size];
+    self.layer.contents = (__bridge id) _imageBackend;
+    
+//    [self.layer setNeedsDisplay];
+    
+    //reset z-depth for the next frame
     memset(_zDepth, 600, sizeof(double) * _canvasPixelSize);
 }
 

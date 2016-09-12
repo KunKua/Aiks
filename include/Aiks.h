@@ -112,13 +112,15 @@
 //SH Version Header
 #include "draw/BasicDraw.h"
 #include "draw/Texture.h"
-#include "draw/Vertex3D.h"
+#include "draw/MappingTexture.h"
+#include "draw/ColorTexture.h"
 #include "light/FakeLight.h"
 #include "light/SimpleDiffuseLight.h"
 #include "math/Matrix44.h"
 #include "math/Transform.h"
 #include "math/math.h"
 #include "geom/Object3D.h"
+#include "geom/Vertex3D.h"
 #include "decoders/D3DSDecoder.h"
 
 #if AK_TARGET_PLATFORM == AK_PLATFORM_MAC
