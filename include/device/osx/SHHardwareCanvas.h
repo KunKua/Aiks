@@ -11,4 +11,8 @@
 
 @interface SHHardwareCanvas : NSOpenGLView <IDevice_osx>
 
+- (instancetype) initWithBackgroundColor:(SHColor) color;
+
+- (sh::IDevice *) getNativePtr;
+
 @end
