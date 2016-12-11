@@ -105,8 +105,8 @@
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
         
-        float ratio = self.frame.size.width / self.frame.size.height;
-        glOrtho(-ratio, ratio, -1.0f, 1.0f, -1.0f, 1.0f);
+//        float ratio = self.frame.size.width / self.frame.size.height;
+//        glOrtho(-ratio, ratio, -1.0f, 1.0f, -1.0f, 1.0f);
         
         glEnable(GL_TEXTURE_2D);
         glGenTextures(1, &_textureId);
