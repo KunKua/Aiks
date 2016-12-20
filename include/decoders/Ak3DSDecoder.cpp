@@ -3,14 +3,17 @@
 //  Aiks_lib
 //
 //  Created by 7heaven on 16/7/10.
-//  Copyright © 2016年 Saint Hsu. All rights reserved.
+//  Copyright © 2016年 Aiks Group. All rights reserved.
 //
 
-#include "D3DSDecoder.h"
 #include <stdlib.h>
 #include <map>
-#include "math/math.h"
 #include <math.h>
+#include <stdlib.h>
+
+#include "Ak3DSDecoder.h"
+#include "math/AkMath.h"
+
 
 #define          HEAD3DS 0x4D4D //header of 3ds file
 #define            ED3DS 0x3D3D //main editor block
@@ -99,7 +102,8 @@
 #define ED_UNKN13 0x2000
 #define ED_UNKN14 0xAFFF
 
-namespace sh{
+namespace aiks {
+
     D3DSDecoder::D3DSDecoder(){
         
     }
@@ -111,9 +115,14 @@ namespace sh{
     
     //>>>>>main entry of 3ds file decoding<<<<<
     Object3D D3DSDecoder::decode(const char * path){
-        this->fp = fopen(path, "rb");
+		if(path == nullptr || strlen(path) == 0) {
+			return (Object3D){};
+		}
+
+        _fp = fopen(path, "rb");
         printf("path:%s\n", path);
-        if(this->fp != NULL){
+
+        if(_fp != nullptr){
             
             Object3D object;
             
@@ -125,7 +134,7 @@ namespace sh{
             
             const size_t fileSize = chunk._chunk_length;
             
-            while(this->fp->_offset < fileSize){
+            while(_fp->_offset < fileSize){
                 
                 switch(chunk._chunk_head){
                     case HEAD3DS:
@@ -588,11 +597,8 @@ namespace sh{
         
     }
     
-    Chunk D3DSDecoder::readChunk(){
-        
-        Chunk result;
-        
-        if(this->fp == nullptr) return result;
+    int D3DSDecoder::readChunk(Chunk &result){  
+        if(this->_fp == nullptr) return -1;
         
         result._checksum_head = readU16(result._chunk_head);
         result._checksum_length = readU32(result._chunk_length);
@@ -605,6 +611,6 @@ namespace sh{
         
         result._ins_length = ftell(this->fp) + result._content_length;
         
-        return result;
+        return 0;
     }
 }

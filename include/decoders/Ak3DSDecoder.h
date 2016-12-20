@@ -1,16 +1,16 @@
 //
-//  D3DSDecoder.hpp
-//  Aiks_lib
+//  Ak3DSDecoder.h
 //
 //  Created by 7heaven on 16/7/10.
-//  Copyright © 2016年 Saint Hsu. All rights reserved.
+//  Copyright © 2016年 Aiks Group. All rights reserved.
 //
 
-#ifndef D3DSDecoder_hpp
-#define D3DSDecoder_hpp
+#ifndef AK_DECODE_3DSDECODER_H
+#define AK_DECODE_3DSDECODER_H
 
-#include "AbsDecoder.h"
 #include <stdio.h>
+
+#include "AkAbsDecoder.h"
 #include "geom/Object3D.h"
 
 typedef struct Chunk{
@@ -32,9 +32,10 @@ typedef struct Chunk{
 }Chunk;
 
 
-namespace sh{
+namespace aiks {
     
-    class D3DSDecoder : public AbsDecoder<Object3D>{
+class D3DSDecoder : public AbsDecoder<Object3D>
+{
     public:
         D3DSDecoder();
         ~D3DSDecoder();
@@ -48,4 +49,4 @@ namespace sh{
     };
 }
 
-#endif /* D3DSDecoder_hpp */
+#endif /* Ak3DSDecoder_h */

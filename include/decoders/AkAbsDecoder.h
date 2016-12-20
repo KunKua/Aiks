@@ -1,21 +1,22 @@
 //
-//  AbsDecoder.hpp
-//  Aiks_lib
+//  AbsDecoder.h
 //
 //  Created by 7heaven on 16/7/10.
-//  Copyright © 2016年 Saint Hsu. All rights reserved.
+//  Copyright © 2016年 Aiks Group. All rights reserved.
 //
 
-#ifndef AbsDecoder_hpp
-#define AbsDecoder_hpp
+#ifndef AK_DECODE_ABSDECODER_H
+#define AK_DECODE_ABSDECODER_H
 
-#include "IDecoder.h"
 #include <stdio.h>
 
-namespace sh{
+#include "AkTypes.h"
+
+namespace aiks{
 
 template<typename T>
-class AbsDecoder : public IDecoder<T>{
+class AbsDecoder 
+{
 public:
     AbsDecoder(){
         
@@ -24,7 +25,6 @@ public:
         
     }
     
-//    virtual T decode(const char *path);
     virtual T decode(const char * path){
         return (T){};
     }
@@ -55,8 +55,9 @@ protected:
         return result == 1 ? result : EOF;
     }
     
-    FILE *fp;
+    FILE *_fp;
 };
+
 }
 
-#endif /* AbsDecoder_hpp */
+#endif /* AkAbsDecoder_h */

@@ -11,7 +11,13 @@
 #include <string.h>
 
 typedef int8_t  Int8
+typedef int16_t Int16
 typedef int32_t Int32
+typedef int64_t Int64
+typedef uint8_t uInt8
+typedef uint16_t uInt16
+typedef uint32_t uInt32
+typedef uint64_t uInt64
 
 template <typename T> inline void AkSwap(T& a,T& b)
 {
@@ -59,12 +65,12 @@ template <typename T> const T& AkMax(const T& a, const T& b) {
 		TypeName(const TypeName&);\
 		TypeName& operator=(const TypeName&) \
 
-class AkNonCopyable
+class NonCopyable
 {
 public:
-		AkNonCopyable() {}
+		NonCopyable() {}
 private:
-		MakeNonCopyable(AkNonCopyable);
+		MakeNonCopyable(NonCopyable);
 }
 
 #endif
