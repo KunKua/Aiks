@@ -26,7 +26,7 @@ public:
     
 //    virtual T decode(const char *path);
     virtual T decode(const char * path){
-        return NULL;
+        return (T){};
     }
     
 protected:

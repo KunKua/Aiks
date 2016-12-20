@@ -110,12 +110,12 @@ namespace sh{
     
     
     //>>>>>main entry of 3ds file decoding<<<<<
-    Object3D * D3DSDecoder::decode(const char * path){
+    Object3D D3DSDecoder::decode(const char * path){
         this->fp = fopen(path, "rb");
         printf("path:%s\n", path);
         if(this->fp != NULL){
             
-            Object3D *object = (Object3D *)malloc(sizeof(Object3D));
+            Object3D object;
             
             int meshIndex = 0;
             Mesh3D *meshes;
@@ -152,15 +152,15 @@ namespace sh{
                             case OBJ_TRIMESH:
                             {
                                 if(meshIndex == 0){
-                                    object->_meshes = (Mesh3D *) malloc(sizeof(Mesh3D));
+                                    object._meshes = (Mesh3D *) malloc(sizeof(Mesh3D));
                                 }else{
-                                    object->_meshes = (Mesh3D *) realloc(object->_meshes, sizeof(Mesh3D) * (meshIndex + 1));
+                                    object._meshes = (Mesh3D *) realloc(object._meshes, sizeof(Mesh3D) * (meshIndex + 1));
                                 }
                                 
                                 meshes = (Mesh3D *) malloc(sizeof(Mesh3D));
                                 decodeMesh(*meshes, subchunk);
                                 
-                                object->_meshes[meshIndex] = *meshes;
+                                object._meshes[meshIndex] = *meshes;
                                 meshIndex++;
                             }
                                 break;
@@ -377,12 +377,50 @@ namespace sh{
             
             fclose(this->fp);
             
-            object->_mesh_count = meshIndex;
+            object._meshes = (Mesh3D *) realloc(object._meshes, sizeof(Mesh3D) * (meshIndex + 1));
+            
+            SHVector3D lastMeshNormal = SHVector3DMake(0, 1, 0, 1);
+            
+            Mesh3D lastMesh;
+            float size = 35;
+            float zOffset = 10;
+            float yOffset = 40;
+            lastMesh._vertexes = (SHVector3D *) malloc(sizeof(SHVector3D) * 4);
+            lastMesh._vertexes[0] = SHVector3DMake(-size, yOffset, -size + zOffset, 1);
+            lastMesh._vertexes[1] = SHVector3DMake(size, yOffset, -size + zOffset, 1);
+            lastMesh._vertexes[2] = SHVector3DMake(size, yOffset, size + zOffset, 1);
+            lastMesh._vertexes[3] = SHVector3DMake(-size, yOffset, size + zOffset, 1);
+            lastMesh._vertexSize = 4;
+            
+            lastMesh._triangles = (SHSimpleTri *) malloc(sizeof(SHSimpleTri) * 2);
+            lastMesh._triangles[0] = (SHSimpleTri){0, 1, 2};
+            lastMesh._triangles[1] = (SHSimpleTri){0, 2, 3};
+            lastMesh._trianglesSize = 2;
+            
+            lastMesh._vertexesNormal = (SHVector3D *) malloc(sizeof(SHVector3D) * lastMesh._vertexSize);
+            lastMesh._vertexesNormal_m = (float *) malloc(sizeof(float) * lastMesh._vertexSize);
+            for(int i = 0; i < lastMesh._vertexSize; i++){
+                lastMesh._vertexesNormal[i] = lastMeshNormal;
+                lastMesh._vertexesNormal_m[i] = 1;
+            }
+            
+            lastMesh._trianglesNormal = (SHVector3D *) malloc(sizeof(SHVector3D) * lastMesh._trianglesSize);
+            lastMesh._trianglesNormal[0] = lastMesh._trianglesNormal[1] = lastMeshNormal;
+            
+            lastMesh._uvmaps = (SHUVCoorF *) malloc(sizeof(SHUVCoorF) * lastMesh._vertexSize);
+            lastMesh._uvmaps[0] = (SHUVCoorF) {0, 0};
+            lastMesh._uvmaps[1] = (SHUVCoorF) {0, 1};
+            lastMesh._uvmaps[2] = (SHUVCoorF) {1, 1};
+            lastMesh._uvmaps[3] = (SHUVCoorF) {1, 0};
+            
+            object._meshes[meshIndex] = lastMesh;
+            
+            object._mesh_count = meshIndex++;
             
             return object;
         }
         
-        return NULL;
+        return (Object3D){};
     }
     
     void D3DSDecoder::decodeMesh(Mesh3D &mesh, Chunk meshChunk){

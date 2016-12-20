@@ -48,6 +48,22 @@
     return self;
 }
 
+- (instancetype) initWithCoder:(NSCoder *)coder{
+    if(self = [super initWithCoder:coder]){
+        [self initProcess];
+    }
+    
+    return self;
+}
+
+- (instancetype) initWithFrame:(NSRect)frameRect{
+    if(self = [super initWithFrame:frameRect]){
+        [self initProcess];
+    }
+    
+    return self;
+}
+
 - (void) prepareOpenGL{
     [self initProcess];
 }

@@ -34,12 +34,12 @@ typedef struct Chunk{
 
 namespace sh{
     
-    class D3DSDecoder : public AbsDecoder<Object3D *>{
+    class D3DSDecoder : public AbsDecoder<Object3D>{
     public:
         D3DSDecoder();
         ~D3DSDecoder();
         
-        Object3D * decode(const char * path);
+        Object3D decode(const char * path);
     private:
         Chunk readChunk();
         
