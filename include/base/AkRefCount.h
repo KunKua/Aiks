@@ -11,13 +11,13 @@ namespace aiks {
 class RefCount
 {
 private:
-		Int32 _refCount;
+		s32 _refCount;
 public:
 		RefCount();
 		~RefCount();
 		void add();
 		void release();
-		Int32 getCount() const;
+		s32 getCount() const;
 }
 
 }

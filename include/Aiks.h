@@ -108,8 +108,7 @@
 #endif
 
 //Aiks Header
-
-//SH Version Header
+#include "decoders/Ak3DSDecoder.h"
 #include "draw/BasicDraw.h"
 #include "draw/Texture.h"
 #include "draw/MappingTexture.h"
@@ -121,7 +120,6 @@
 #include "math/math.h"
 #include "geom/Object3D.h"
 #include "geom/Vertex3D.h"
-#include "decoders/D3DSDecoder.h"
 
 #if AK_TARGET_PLATFORM == AK_PLATFORM_MAC
 #include "device/osx/MacDevice.h"

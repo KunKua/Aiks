@@ -1,9 +1,8 @@
 //
 //  BasicDraw.h
-//  SHSoftwareRasterizer
 //
 //  Created by 7heaven on 16/5/13.
-//  Copyright © 2016年 7heaven. All rights reserved.
+//  Copyright © 2016年 Aiks Group. All rights reserved.
 //
 
 #ifndef BasicDraw_h
@@ -16,9 +15,10 @@
 #include "draw/Texture.h"
 #include "light/ILight.h"
 
-namespace sh{
+namespace aiks {
 
-    class BasicDraw{
+class BasicDraw
+{
     public:
         static void drawLine(IDevice &device, SHPoint p0, SHPoint p1, SHColor color);
         static void drawTriangle(IDevice &device, SHPoint a, SHPoint b, SHPoint c, SHColor color);

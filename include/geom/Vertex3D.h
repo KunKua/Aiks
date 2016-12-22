@@ -1,19 +1,20 @@
 //
-//  Vertex3D.hpp
-//  SHSoftwareRasterizer
+//  Vertex3D.h
 //
 //  Created by 7heaven on 16/5/14.
-//  Copyright © 2016年 7heaven. All rights reserved.
+//  Copyright © 2016年 Aiks Group. All rights reserved.
 //
 
-#ifndef Vertex3D_hpp
-#define Vertex3D_hpp
+#ifndef AK_GEOM_VERTEX3D_H
+#define AK_GEOM_VERTEX3D_H
 
 #include <stdio.h>
 #include "math/BasicGeometry.h"
 
-namespace sh{
-    class Vertex3D{
+namespace aiks{
+
+class Vertex3D
+{
     public:
         Vertex3D();
         ~Vertex3D();
@@ -30,4 +31,4 @@ namespace sh{
     };
 }
 
-#endif /* Vertex3D_hpp */
+#endif /* AkVertex3D_h*/

@@ -7,44 +7,64 @@
 
 #include <stddef.h>
 #include <stdint.h>
-
+#include <stdbool.h>
 #include <string.h>
 
-typedef int8_t  Int8
-typedef int16_t Int16
-typedef int32_t Int32
-typedef int64_t Int64
-typedef uint8_t uInt8
-typedef uint16_t uInt16
-typedef uint32_t uInt32
-typedef uint64_t uInt64
+#include "base/AkAssert.h"
 
-template <typename T> inline void AkSwap(T& a,T& b)
-{
-		T c(a);
-		a = b;
-		b = c;
-}
+/// The maximum value of a u64.
+#define U64_MAX	UINT64_MAX
 
-static inline Int32 AkMax32(Int32 a, Int32 b) {
-    if (a < b)
-        a = b;
-    return a;
-}
+/// would be nice if newlib had this already
+#ifndef SSIZE_MAX
+#ifdef SIZE_MAX
+#define SSIZE_MAX ((SIZE_MAX) >> 1)
+#endif
+#endif
 
-static inline Int32 AkMin32(Int32 a, Int32 b) {
-    if (a > b)
-        a = b;
-    return a;
-}
+typedef uint8_t u8;   ///<  8-bit unsigned integer
+typedef uint16_t u16; ///< 16-bit unsigned integer
+typedef uint32_t u32; ///< 32-bit unsigned integer
+typedef uint64_t u64; ///< 64-bit unsigned integer
 
-template <typename T> const T& AkMin(const T& a, const T& b) {
-    return (a < b) ? a : b;
-}
+typedef int8_t s8;   ///<  8-bit signed integer
+typedef int16_t s16; ///< 16-bit signed integer
+typedef int32_t s32; ///< 32-bit signed integer
+typedef int64_t s64; ///< 64-bit signed integer
 
-template <typename T> const T& AkMax(const T& a, const T& b) {
-    return (b < a) ? a : b;
-}
+typedef volatile u8 vu8;   ///<  8-bit volatile unsigned integer.
+typedef volatile u16 vu16; ///< 16-bit volatile unsigned integer.
+typedef volatile u32 vu32; ///< 32-bit volatile unsigned integer.
+typedef volatile u64 vu64; ///< 64-bit volatile unsigned integer.
+
+typedef volatile s8 vs8;   ///<  8-bit volatile signed integer.
+typedef volatile s16 vs16; ///< 16-bit volatile signed integer.
+typedef volatile s32 vs32; ///< 32-bit volatile signed integer.
+typedef volatile s64 vs64; ///< 64-bit volatile signed integer.
+
+typedef float  f32; //< 32 bit float
+typedef double f64; //< 64 bit float
+COMPILE_TIME_ASSERT(sizeof(f32) == 4);
+COMPILE_TIME_ASSERT(sizeof(f64) == 8);
+
+
+typedef void (*ThreadFunc)(void *); ///< Thread entrypoint function.
+typedef void (*voidfn)(void);
+
+/// Creates a bitmask from a bit number.
+#define BIT(n) (1U<<(n))
+
+/// Aligns a struct (and other types?) to m, making sure that the size of the struct is a multiple of m.
+#define ALIGN(m)   __attribute__((aligned(m)))
+/// Packs a struct (and other types?) so it won't include padding bytes.
+#define PACKED     __attribute__((packed))
+
+#ifndef LIBCTRU_NO_DEPRECATION
+/// Flags a function as deprecated.
+#define DEPRECATED __attribute__ ((deprecated))
+#else
+/// Flags a function as deprecated.
+#define DEPRECATED
 
 #define AkAlign2(x)     (((x) + 1) >> 1 << 1)
 #define AkIsAlign2(x)   (0 == ((x) & 1))

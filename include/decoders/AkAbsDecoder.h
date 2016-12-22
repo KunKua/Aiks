@@ -31,7 +31,7 @@ public:
     
 protected:
     
-    size_t readU8(uint8_t &buffer){
+    size_t readU8(u8 &buffer){
         size_t result = fread(&buffer, sizeof(uint8_t), 1, fp);
         
         return result == 1 ? result : EOF;

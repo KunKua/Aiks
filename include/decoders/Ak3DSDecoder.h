@@ -10,8 +10,8 @@
 
 #include <stdio.h>
 
-#include "AkAbsDecoder.h"
-#include "geom/Object3D.h"
+#include "decoders/AkAbsDecoder.h"
+#include "geom/AkObject3D.h"
 
 typedef struct Chunk{
     //chunk head in 2 bytes
