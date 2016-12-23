@@ -1,18 +1,14 @@
-//
-//  Texture.hpp
-//  SHSoftwareRasterizer
-//
-//  Created by 7heaven on 16/5/16.
-//  Copyright © 2016年 7heaven. All rights reserved.
-//
+/************************************************
+ * Copyright 2016 Aiks Group,All rights reserved.
+ * *********************************************/
 
-#ifndef Texture_hpp
-#define Texture_hpp
+#ifndef AK_DRAW_TEXTURE_H
+#define AK_DRAW_TEXTURE_H
 
 #include <stdio.h>
 #include "math/BasicGeometry.h"
 
-namespace sh{
+namespace aiks {
     
     enum FilterType{
         None,
@@ -21,9 +17,9 @@ namespace sh{
         Anisotropic
     };
     
-    class Texture{
-    public:
-        
+    class Texture
+	{
+    public:    
         virtual void setFilterType(FilterType type) = 0;
         virtual FilterType getFilterType() = 0;
         

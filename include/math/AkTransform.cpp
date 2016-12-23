@@ -1,15 +1,12 @@
-//
-//  Transform.cpp
-//  SHSoftwareRasterizer
-//
-//  Created by 7heaven on 16/5/26.
-//  Copyright © 2016年 7heaven. All rights reserved.
-//
+/************************************************
+ * Copyright 2016 Aiks Group,All rights reserved.
+ * ********************************************/
 
-#include "math/Transform.h"
+#include "math/AkTransform.h"
 #include <math.h>
 
-namespace sh{
+namespace aiks {
+
     Transform::Transform()
     :m(Matrix44::identity()){
         
