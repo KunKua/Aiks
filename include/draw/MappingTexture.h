@@ -1,10 +1,6 @@
-//
-//  MappingTexture.h
-//  Aiks_lib
-//
-//  Created by 7heaven on 16/9/12.
-//  Copyright © 2016年 Saint Hsu. All rights reserved.
-//
+/************************************************
+ * Copyright 2016 Aiks Group,All rights reserved.
+ * *********************************************/
 
 #ifndef MappingTexture_h
 #define MappingTexture_h

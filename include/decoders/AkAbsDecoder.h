@@ -1,9 +1,6 @@
-//
-//  AbsDecoder.h
-//
-//  Created by 7heaven on 16/7/10.
-//  Copyright © 2016年 Aiks Group. All rights reserved.
-//
+/************************************************
+ * Copyright 2016 Aiks Group,All rights reserved.
+ * *********************************************/
 
 #ifndef AK_DECODE_ABSDECODER_H
 #define AK_DECODE_ABSDECODER_H

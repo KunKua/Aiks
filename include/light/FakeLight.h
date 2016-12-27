@@ -1,10 +1,6 @@
-//
-//  FakeLight.hpp
-//  SHSoftwareRasterizer
-//
-//  Created by 7heaven on 16/5/17.
-//  Copyright © 2016年 7heaven. All rights reserved.
-//
+/************************************************
+ * Copyright 2016 Aiks Group,All rights reserved.
+ * *********************************************/
 
 #ifndef FakeLight_hpp
 #define FakeLight_hpp

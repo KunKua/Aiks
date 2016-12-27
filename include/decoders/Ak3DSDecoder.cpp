@@ -1,10 +1,6 @@
-//
-//  3DSDecoder.cpp
-//  Aiks_lib
-//
-//  Created by 7heaven on 16/7/10.
-//  Copyright © 2016年 Aiks Group. All rights reserved.
-//
+/************************************************
+ * Copyright 2016 Aiks Group,All rights reserved.
+ * *********************************************/
 
 #include <stdlib.h>
 #include <map>

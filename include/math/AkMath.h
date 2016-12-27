@@ -1,9 +1,6 @@
-//
-//  math.h
-//
-//  Created by 7heaven on 16/7/12.
-//  Copyright © 2016年 Aiks Group. All rights reserved.
-//
+/************************************************
+ * Copyright 2016 Aiks Group,All rights reserved.
+ * *********************************************/
 
 #ifndef AK_MATH_MATH_H
 #define AK_MATH_MATH_H
@@ -95,16 +92,6 @@ inline Vector3D crossProduct(SHVector3D v0, SHVector3D v1){
     result.x = v0.y * v1.z - v0.z * v1.y;
     result.y = v0.z * v1.x - v0.x * v1.z;
     result.z = v0.x * v1.y - v0.y * v1.x;
-    result.w = 1.0F;
-    
-    return result;
-}
-
-inline Vector3D plus(SHVector3D v0, SHVector3D v1){
-    SHVector3D result;
-    result.x = v0.x + v1.x;
-    result.y = v0.y + v1.y;
-    result.z = v0.z + v1.z;
     result.w = 1.0F;
     
     return result;

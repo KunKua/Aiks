@@ -40,6 +40,36 @@ public:
 	}
 };	
 
+//! Vector addition.
+template<class F1, class F2> inline TVec3<F1> operator+(const TVec3<F1>& v0, const TVec3<F2>& v1)
+{
+	return TVec3<F1>(v0.x + v1.x, v0.y + v1.y, v0.z + v1.z);
+}
+//! Vector addition.
+template<class F1, class F2> inline TVec3<F1> operator+(const TVec2<F1>& v0, const TVec3<F2>& v1)
+{
+	return TVec3<F1>(v0.x + v1.x, v0.y + v1.y, v1.z);
+}
+//! Vector addition.
+template<class F1, class F2> inline TVec3<F1> operator+(const TVec3<F1>& v0, const TVec2<F2>& v1)
+{
+	return TVec3<F1>(v0.x + v1.x, v0.y + v1.y, v0.z);
+}
+
+//! Vector subtraction.
+template<class F1, class F2> inline TVec3<F1> operator-(const TVec3<F1>& v0, const TVec3<F2>& v1)
+{
+	return TVec3<F1>((F1)(v0.x - v1.x), (F1)(v0.y - v1.y), (F1)(v0.z - v1.z));
+}
+template<class F1, class F2> inline TVec3<F1> operator-(const TVec2<F1>& v0, const TVec3<F2>& v1)
+{
+	return TVec3<F1>(v0.x - v1.x, v0.y - v1.y, 0.0f - v1.z);
+}
+template<class F1, class F2> inline TVec3<F1> operator-(const TVec3<F1>& v0, const TVec2<F2>& v1)
+{
+	return TVec3<F1>(v0.x - v1.x, v0.y - v1.y, v0.z);
+}
+
 
 typedef TVec3<f32> Vec3;
 typedef TVec3<F64> Vec3d; //<< 64 bit double type

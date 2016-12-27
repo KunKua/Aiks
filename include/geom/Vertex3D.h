@@ -1,9 +1,6 @@
-//
-//  Vertex3D.h
-//
-//  Created by 7heaven on 16/5/14.
-//  Copyright © 2016年 Aiks Group. All rights reserved.
-//
+/************************************************
+ * Copyright 2016 Aiks Group,All rights reserved.
+ * *********************************************/
 
 #ifndef AK_GEOM_VERTEX3D_H
 #define AK_GEOM_VERTEX3D_H

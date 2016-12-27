@@ -1,13 +1,11 @@
-//
-//  BasicGeometry.h
-//  SHSoftwareRasterizer
-//
-//  Created by 7heaven on 16/5/12.
-//  Copyright Aiks Group . All rights reserved.
-//
+/************************************************
+ * Copyright 2016 Aiks Group,All rights reserved.
+ * *********************************************/
 
-#ifndef BasicGeometry_h
-#define BasicGeometry_h
+#ifndef AK_MATH_GEOMETRY_H
+#define AK_MATH_GEOMETRY_H
+
+namespace aiks {
 
 typedef struct SHPoint{
     int x;
@@ -48,12 +46,45 @@ typedef struct SHSimpleTri{
     unsigned int c;
 }SHSimpleTri;
 
-typedef struct SHRect{
-    int x;
-    int y;
-    int w;
-    int h;
-}SHRect;
+struct RectF
+{
+	float x, y, w, h;
+	RectF()
+		: x(0), y(0), w(1), h(1)
+	{
+	}
+	AUTO_STRUCT_INFO;
+};
+
+struct RectI
+{
+	int x, y, w, h;
+	RectI()
+		: x(0), y(0), w(1), h(1)
+	{
+	}
+	RectI(int inX, int inY, int inW, int inH)
+		: x(inX), y(inY), w(inW), h(inH)
+	{
+	}
+	inline void Add(RectI rcAdd)
+	{
+		int x2 = x + w;
+		int y2 = y + h;
+		int x22 = rcAdd.x + rcAdd.w;
+		int y22 = rcAdd.y + rcAdd.h;
+		x = min(x, rcAdd.x);
+		y = min(y, rcAdd.y);
+		x2 = max(x2, x22);
+		y2 = max(y2, y22);
+		w = x2 - x;
+		h = y2 - y;
+	}
+	inline void Add(int inX, int inY, int inW, int inH)
+	{
+		Add(RectI(inX, inY, inW, inH));
+	}
+};
 
 typedef struct SHVector3D{
     float x;
@@ -62,48 +93,6 @@ typedef struct SHVector3D{
     float w;
 }SHVector3D;
 
-typedef struct SHColor{
-    unsigned char a;
-    unsigned char r;
-    unsigned char g;
-    unsigned char b;
-}SHColor;
-
-static inline SHPoint SHPointMake(int x, int y){
-    return (SHPoint){x, y};
 }
 
-static inline SHPointF SHPointFMake(float x, float y){
-    return (SHPointF){x, y};
-}
-
-static inline SHPoint3D SHPoint3DMake(float x, float y, float z){
-    return (SHPoint3D){x, y, z};
-}
-
-static inline SHRect SHRectMake(int x, int y, int w, int h){
-    return (SHRect){x, y, w, h};
-}
-
-static inline SHVector3D SHVector3DMake(float x, float y, float z, float w){
-    return (SHVector3D){x, y, z, w};
-}
-
-static inline SHColor SHColorMake(unsigned int color){
-    return (SHColor){static_cast<unsigned char>((color >> 24) & 0xFF),
-                     static_cast<unsigned char>((color >> 16) & 0xFF),
-                     static_cast<unsigned char>((color >> 8) & 0xFF),
-                     static_cast<unsigned char>(color & 0xFF)};
-}
-
-static inline SHVector3D SHVector3DPlus(const SHVector3D &a, const SHVector3D &b){
-    SHVector3D result;
-    result.x = a.x + b.x;
-    result.y = a.y + b.y;
-    result.z = a.z + b.z;
-    result.w = 1.0F;
-    
-    return result;
-}
-
-#endif /* BasicGeometry_h */
+#endif /* AkGeometry_h */

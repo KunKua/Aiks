@@ -1,6 +1,6 @@
-/*************************************
- * Copyright 2016 Aiks Group
- * ***********************************/
+/************************************************
+ * Copyright 2016 Aiks Group,All rights reserved.
+ * *********************************************/
 
 #ifndef AIKS_BASE_TYPES_H
 #define AIKS_BASE_TYPES_H

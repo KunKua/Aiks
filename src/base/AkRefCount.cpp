@@ -11,7 +11,7 @@ namespace aiks {
 class AkRefCount
 {
 private:
-		Int32 _refCount;
+		s32 _refCount;
 public:
 		AkRefCount();
 		~AkRefCount();

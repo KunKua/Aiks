@@ -1,18 +1,16 @@
-//
-//  IDevice.h
-//  SHSoftwareRasterizer
-//
-//  Created by 7heaven on 16/5/13.
-//  Copyright © 2016年 7heaven. All rights reserved.
-//
+/************************************************
+ * Copyright 2016 Aiks Group,All rights reserved.
+ * *********************************************/
 
 #ifndef IDevice_h
 #define IDevice_h
 
 #include "math/BasicGeometry.h"
 
-namespace sh{
-    class IDevice{
+namespace aiks {
+
+    class IDevice
+	{
     public:
         virtual void update() = 0;
         

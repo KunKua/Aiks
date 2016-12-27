@@ -1,10 +1,6 @@
-//
-//  BasicDraw.c
-//  SHSoftwareRasterizer
-//
-//  Created by 7heaven on 16/5/13.
-//  Copyright © 2016年 7heaven. All rights reserved.
-//
+/************************************************
+ * Copyright 2016 Aiks Group,All rights reserved.
+ * *********************************************/
 
 #include "draw/BasicDraw.h"
 #include <stdlib.h>
